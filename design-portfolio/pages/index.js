@@ -86,7 +86,7 @@ export default function Home() {
 
         .description {
           line-height: 1.5;
-          font-size: 1.5rem;
+          font-size: 1.75rem;
         }
 
         .homeImage {
@@ -103,7 +103,7 @@ export default function Home() {
           align-items: center;
           justify-content: center;
           flex-wrap: wrap;
-          max-width: 800px;
+          max-width: 765px;
           margin-top: 3rem;
         }
 
