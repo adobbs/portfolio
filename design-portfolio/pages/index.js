@@ -24,12 +24,12 @@ export default function Home() {
         />
 
         <div className="grid">
-          <a href="#" className="card">
+          <a href="AndyDobbsCaseStudies.pdf" className="card">
             <h3>Case Studies &rarr;</h3>
             <p>See how I approach design, research, and architecture.</p>
           </a>
 
-          <a href="#" className="card">
+          <a href="AndyDobbsResumeDesign.pdf" className="card">
             <h3>Resume &rarr;</h3>
             <p>View my career history, education, and skills.</p>
           </a>
@@ -44,8 +44,8 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background-color: hsl(180, 15%, 50%);
-          color: hsl(180, 30%, 10%);
+          background-color: #4086c8;
+          color: #fff;
         }
 
         main {
@@ -122,8 +122,8 @@ export default function Home() {
         .card:hover,
         .card:focus,
         .card:active {
-          color: hsl(180, 80%, 60%);
-          border-color: hsl(180, 80%, 60%);
+          color: #19e6e6;
+          border-color: #19e6e6;
         }
 
         .card h3 {
