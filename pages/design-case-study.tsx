@@ -50,11 +50,11 @@ export default function DesignCaseStudy() {
                             height={540}
                             priority
                         />
-                        <p className="mb-2">Our existing recommendations directed people in a coarse way using machine learning content recommendations. This directed action, but not toward specific solutions that could drive outcomes targeted toward an identified need. And these recommendations were delivered without any signals from people's health data.</p>
+                        <p className="mb-2">Our existing recommendations directed people in a coarse way using machine learning content recommendations. This directed action, but not toward specific solutions that could drive outcomes targeted toward an identified need. And these recommendations were delivered without any signals from people&apos;s health data.</p>
 
                         <p className="mb-2">We knew from foundational research that I synthesized into personas that people like Mateo need help taking specific actions. And people like Shannon want timely, relevant support to keep on track. Without a guided experience, Mateo would fall off track. And without recognition, Shannon would have less insight into whether she is really achieving her goals.</p>
 
-                        <p className="mb-2">We could only drive health outcomes if we got people to change their behavior in the real world. That means we needed to react to data signals from real world behaviors, and align our massive content library with the underlying needs driving changes in people's behavior. Unlike other recommendation systems, we didn&apos;t win by getting people to watch one more video, listen to one more song, add one more item to their cart, or keep scrolling their feed for one more hour. We won every time one more life was changed for the better.</p>
+                        <p className="mb-2">We could only drive health outcomes if we got people to change their behavior in the real world. That means we needed to react to data signals from real world behaviors, and align our massive content library with the underlying needs driving changes in people&apos;s behavior. Unlike other recommendation systems, we didn&apos;t win by getting people to watch one more video, listen to one more song, add one more item to their cart, or keep scrolling their feed for one more hour. We won every time one more life was changed for the better.</p>
                     </section>
                     <section className="bg-zinc-700 text-base max-w-3xl mb-6 p-4 md:py-8 md:px-10 border rounded-lg">
                         <Image
