@@ -36,7 +36,7 @@ export default function DesignCaseStudy() {
 
                         <p className="mb-2">VP IQ is an iOS, Android, and web experience that delivers on this goal by helping people improve health outcomes through personalized interactions powered by artificial intelligence, behavioral science, and machine learning.</p>
 
-                        <p className="mb-2">The conversational experience adapts to signals of motivation and demotivation, then explores the underlying “why” behind the change before prompting action or delivering content that is ranked by an ML algorithm. This includes all users in an intelligent feedback loop that helps guide them to the next best healthy action.</p>
+                        <p className="mb-2">The conversational experience adapts to signals of motivation and demotivation, then explores the underlying reason behind the change before prompting action or delivering content that is ranked by an ML algorithm. This includes all users in an intelligent feedback loop that helps guide them to the next best healthy action.</p>
 
                         <p className="mb-2">In addition to leading design on this feature, I led design of personalization and recommendation features for Virgin Pulse, a platform that reaches 14 million people and spans 22 languages. I created and socialized the design strategy for personalization that informs the work of a global 60 person product organization and 22 engineering teams.</p>
 
@@ -50,11 +50,11 @@ export default function DesignCaseStudy() {
                             height={540}
                             priority
                         />
-                        <p className="mb-2">Our existing recommendations directed people in a coarse way using "people like you" machine learning algorithms. This directed action, but not toward specific solutions that could drive outcomes targeted toward an identified need. And these recommendations were delivered without any signals from people's health data.</p>
+                        <p className="mb-2">Our existing recommendations directed people in a coarse way using machine learning content recommendations. This directed action, but not toward specific solutions that could drive outcomes targeted toward an identified need. And these recommendations were delivered without any signals from people's health data.</p>
 
                         <p className="mb-2">We knew from foundational research that I synthesized into personas that people like Mateo need help taking specific actions. And people like Shannon want timely, relevant support to keep on track. Without a guided experience, Mateo would fall off track. And without recognition, Shannon would have less insight into whether she is really achieving her goals.</p>
 
-                        <p className="mb-2">We could only drive health outcomes if we got people to change their behavior in the real world. That means we needed to react to data signals from real world behaviors, and align our massive content library with the underlying needs driving changes in people's behavior. Unlike other recommendation systems, we didn't win by getting people to watch one more video, listen to one more song, add one more item to their cart, or keep scrolling their feed for one more hour. We won every time one more life was changed for the better.</p>
+                        <p className="mb-2">We could only drive health outcomes if we got people to change their behavior in the real world. That means we needed to react to data signals from real world behaviors, and align our massive content library with the underlying needs driving changes in people's behavior. Unlike other recommendation systems, we didn&apos;t win by getting people to watch one more video, listen to one more song, add one more item to their cart, or keep scrolling their feed for one more hour. We won every time one more life was changed for the better.</p>
                     </section>
                     <section className="bg-zinc-700 text-base max-w-3xl mb-6 p-4 md:py-8 md:px-10 border rounded-lg">
                         <Image
@@ -64,17 +64,17 @@ export default function DesignCaseStudy() {
                             height={540}
                             priority
                         />
-                        <p className="mb-2">We focused on a “how might we” question to guide our ideation: How might we personalize the health journey in a way that improves outcomes?</p>
+                        <p className="mb-2">We focused on a central question to guide our ideation: How might we personalize the health journey in a way that improves outcomes?</p>
 
                         <p className="mb-2">Inspired by cross-functional exploration, we harmonized around a dynamic set of conversational experiences that are triggered through statistical tests of validated health data.</p>
 
-                        <p className="mb-2">Two of these experiences, Interventions and Reflections, lead to a "choose-your-own-adventure" interaction that curates subsets of recommended content based on the reason people provide for why their data has trended in a positive or negative direction.</p>
+                        <p className="mb-2">Two of these experiences, Interventions and Reflections, lead to a choose-your-own-adventure interaction that curates subsets of recommended content based on the reason people provide for why their data has trended in a positive or negative direction.</p>
 
                         <p className="mb-2">Guided by governance rules, people may also receive an experience that helps them set their goals or receive a simple positivity booster called a Celebration.</p>
 
                         <p className="mb-2">Most of the content in this experience is dynamic, and all the copy is served from a custom CMS we built for our content team. The CMS also stores translations in 22 different languages.</p>
 
-                        <p className="mb-2">A variety of UX research studies conducted throughout the lifecycle of product discovery and delivery informed the solution every step of the way, helping us refine our approach. The biggest takeaways from that research are that agency increases trust, conversations create comfort, and exploring the "why" is essential.</p>
+                        <p className="mb-2">A variety of UX research studies conducted throughout the lifecycle of product discovery and delivery informed the solution every step of the way, helping us refine our approach. The biggest takeaways from that research are that agency increases trust, conversations create comfort, and exploring the root cause is essential.</p>
                     </section>
                     <section className="bg-zinc-700 text-base max-w-3xl mb-6 p-4 md:py-8 md:px-10 border rounded-lg">
                         <Image
