@@ -44,7 +44,9 @@ export default function Home() {
                     priority
                 />
                 <h2 className="text-base md:text-xl text-center font-light mb-12">AI/ML Health Conversations</h2>
-                <button className="hover:text-[#aaff80] py-2 px-4 border hover:border-[#aaff80]  rounded-full">View case study</button>
+                <Link href="/design-case-study">
+                  <button className="hover:text-[#aaff80] py-2 px-4 border hover:border-[#aaff80]  rounded-full">View case study</button>
+                </Link>
             </section>
           </div>
       </div>
