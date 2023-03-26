@@ -1,9 +1,9 @@
 export default function DesignCaseStudy() {
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-4xl text-center mb-10">AI/ML Preventive Health Conversations</h1>
+            <h1 className="text-2xl md:text-4xl text-center mb-10">AI/ML Health Conversations</h1>
             <div className="flex flex-col items-center">
-                <section className="bg-zinc-800 text-base max-w-3xl mb-6 p-4 border rounded-lg">
+                <section className="bg-zinc-800 text-base max-w-3xl mb-6 p-4 md:p-8 border rounded-lg">
                     <p className="mb-2">The overall business goal for the Virgin Pulse health and wellbeing platform is to drive population health outcomes for employers (buyers) by improving personal health among employees (users).</p>
 
                     <p className="mb-2">VP IQ is an iOS, Android, and web experience that delivers on this goal by helping people improve health outcomes through personalized interactions powered by artificial intelligence, behavioral science, and machine learning.</p>
@@ -16,7 +16,7 @@ export default function DesignCaseStudy() {
 
                     <p className="mb-2">Data gathered through UX research showed that personalization features like VP IQ that I designed are a key driver of behavior change and satisfaction. 87% of users said Virgin Pulse changed their lives, and our NPS score was above 50. VP IQ, the signature personalization feature in the platform, even received a virtual standing ovation from our client success team.</p>
                 </section>
-                <section className="bg-zinc-800 text-base max-w-3xl mb-6 p-4 border rounded-lg">
+                <section className="bg-zinc-800 text-base max-w-3xl mb-6 p-4 md:p-8 border rounded-lg">
                     <p className="mb-2">Our existing recommendations directed people in a coarse way using "people like you" machine learning algorithms. This directed action, but not toward specific solutions that could drive outcomes targeted toward an identified need. And these recommendations were delivered without any signals from people's health data.</p>
 
                     <p className="mb-2">We knew from foundational research that I synthesized into personas that people like Mateo need help taking specific actions. And people like Shannon want timely, relevant support to keep on track. Without a guided experience, Mateo would fall off track. And without recognition, Shannon would have less insight into whether she is really achieving her goals.</p>
