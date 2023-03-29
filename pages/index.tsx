@@ -28,8 +28,8 @@ export default function Home() {
                 className="rounded-full border border-white mb-4"
                 src="/headshot.png"
                 alt="Andy Dobbs headshot"
-                width={96}
-                height={96}
+                width={80}
+                height={80}
                 priority
                 unoptimized
             />
@@ -45,7 +45,7 @@ export default function Home() {
                 />
                 <h2 className="text-base md:text-xl text-center font-light mb-12">AI/ML Health Conversations</h2>
                 <Link href="/design-case-study">
-                  <button className="hover:text-[#aaff80] py-2 px-4 border hover:border-[#aaff80]  rounded-full">View case study</button>
+                  <button className="hover:text-[#aaff80] py-2 px-6 border hover:border-[#aaff80]  rounded-full">View case study</button>
                 </Link>
             </section>
           </div>
