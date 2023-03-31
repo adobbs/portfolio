@@ -22,7 +22,7 @@ function BlueRedPill(props: ThreeElements['mesh']) {
     <mesh
       { ... props}
       ref={mesh}
-      scale={active ? 1.5 : 1}
+      scale={active ? 1.2 : 1}
       onClick={(e) => setActive(!active)}
       onPointerOver={(e) => setHover(true)}
       onPointerOut={(e) => setHover(false)}
@@ -45,7 +45,7 @@ function RedBluePill(props: ThreeElements['mesh']) {
     <mesh
       { ... props}
       ref={mesh}
-      scale={active ? 1.5 : 1}
+      scale={active ? 1.2 : 1}
       onClick={(e) => setActive(!active)}
       onPointerOver={(e) => setHover(true)}
       onPointerOut={(e) => setHover(false)}
