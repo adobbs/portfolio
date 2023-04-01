@@ -5,8 +5,9 @@ import { Inter } from 'next/font/google';
 
 import { Canvas } from '@react-three/fiber';
 
-import BluePill from '../components/BluePill';
-import RedPill from '../components/RedPill';
+import BluePill from '@/components/BluePill';
+import RedPill from '@/components/RedPill';
+import GroundPlane from '@/components/GroundPlane';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -62,6 +63,13 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+        <div className="container mx-auto mt-12">
+          <Canvas>
+            <ambientLight />
+            <pointLight position={[10, 10, 10]} />
+            <GroundPlane />
+          </Canvas>
         </div>
       </div>
     </>
