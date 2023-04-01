@@ -6,13 +6,11 @@ import { Inter } from 'next/font/google';
 import { useRef, useState } from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
-import { BoxGeometry } from 'three';
 
 const inter = Inter({ subsets: ['latin'] })
 
 function BlueRedPill(props: ThreeElements['mesh']) {
   const mesh = useRef<THREE.Mesh>(null!);
-  const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
   useFrame((state, delta) => {
     mesh.current.rotation.z += (delta * 0.7);
@@ -24,11 +22,9 @@ function BlueRedPill(props: ThreeElements['mesh']) {
       ref={mesh}
       scale={active ? 1.2 : 1}
       onClick={(e) => setActive(!active)}
-      onPointerOver={(e) => setHover(true)}
-      onPointerOut={(e) => setHover(false)}
     >
       <capsuleGeometry args={[1, 2.5, 32, 32]} />
-      <meshStandardMaterial color={hovered ? 'red' : 'blue'} />
+      <meshStandardMaterial color="blue" />
     </mesh>
   );
 }
@@ -47,11 +43,9 @@ function RedBluePill(props: ThreeElements['mesh']) {
       ref={mesh}
       scale={active ? 1.2 : 1}
       onClick={(e) => setActive(!active)}
-      onPointerOver={(e) => setHover(true)}
-      onPointerOut={(e) => setHover(false)}
     >
       <capsuleGeometry args={[1, 2.5, 32, 32]} />
-      <meshStandardMaterial color={hovered ? 'blue' : 'red'} />
+      <meshStandardMaterial color="red" />
     </mesh>
   );
 }
