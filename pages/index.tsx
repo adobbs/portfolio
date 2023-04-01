@@ -3,52 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Inter } from 'next/font/google';
 
-import { useRef, useState } from 'react';
-import * as THREE from 'three';
-import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
+
+import BluePill from '../components/BluePill';
+import RedPill from '../components/RedPill';
 
 const inter = Inter({ subsets: ['latin'] })
-
-function BlueRedPill(props: ThreeElements['mesh']) {
-  const mesh = useRef<THREE.Mesh>(null!);
-  const [active, setActive] = useState(false);
-  useFrame((state, delta) => {
-    mesh.current.rotation.z += (delta * 0.7);
-    mesh.current.rotation.x += (delta * 0.5);
-  });
-  return (
-    <mesh
-      { ... props}
-      ref={mesh}
-      scale={active ? 1.2 : 1}
-      onClick={(e) => setActive(!active)}
-    >
-      <capsuleGeometry args={[1, 2.5, 32, 32]} />
-      <meshStandardMaterial color="blue" />
-    </mesh>
-  );
-}
-
-function RedBluePill(props: ThreeElements['mesh']) {
-  const mesh = useRef<THREE.Mesh>(null!);
-  const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
-  useFrame((state, delta) => {
-    mesh.current.rotation.z -= (delta * 0.7);
-    mesh.current.rotation.x -= (delta * 0.5);
-  });
-  return (
-    <mesh
-      { ... props}
-      ref={mesh}
-      scale={active ? 1.2 : 1}
-      onClick={(e) => setActive(!active)}
-    >
-      <capsuleGeometry args={[1, 2.5, 32, 32]} />
-      <meshStandardMaterial color="red" />
-    </mesh>
-  );
-}
 
 export default function Home() {
   return (
@@ -85,7 +45,7 @@ export default function Home() {
               <Canvas>
                 <ambientLight />
                 <pointLight position={[10, 10, 10]} />
-                <BlueRedPill />
+                <BluePill />
               </Canvas>
               <Link href="/design-case-study">
                 <button className="hover:text-[#aaff80] hover:border-[#aaff80] py-2 px-6 border rounded-full">design case</button>
@@ -95,7 +55,7 @@ export default function Home() {
               <Canvas>
                 <ambientLight />
                 <pointLight position={[10, 10, 10]} />
-                <RedBluePill />
+                <RedPill />
               </Canvas>
               <Link href="https://github.com/adobbs/portfolio" target="_blank">
                 <button className="hover:text-[#aaff80] hover:border-[#aaff80] py-2 px-6 border rounded-full">code sample</button>
