@@ -42,7 +42,7 @@ export default function Home() {
           <h1 className="text-2xl md:text-4xl text-center mb-2">Andy Dobbs</h1>
           <h2 className="text-zinc-300 text-base md:text-xl text-center font-light mb-12">UX Engineer</h2>
           <div className="flex flex-row items-center">
-            <div className="flex flex-col items-center w-40 sm:w-48 md:w-56">
+            <div className="flex flex-col items-center w-40 sm:w-48 md:w-56" aria-label="Three dimensional blue pill spinning around slowly" role="img">
               <Canvas>
                 <ambientLight />
                 <pointLight position={[10, 10, 10]} />
@@ -52,7 +52,7 @@ export default function Home() {
                 <button className="hover:text-[#aaff80] hover:border-[#aaff80] py-2 px-6 border rounded-full">design case</button>
               </Link>
             </div>
-            <div className="flex flex-col items-center w-40 sm:w-48 md:w-56">
+            <div className="flex flex-col items-center w-40 sm:w-48 md:w-56" aria-label="Three dimensional blue pill spinning around slowly" role="img">
               <Canvas>
                 <ambientLight />
                 <pointLight position={[10, 10, 10]} />
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="hidden md:block mt-12">
+        <div className="hidden md:block mt-12" aria-label="Three dimenionsal green ground plane styled as a wireframe" role="img">
           <Canvas>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
