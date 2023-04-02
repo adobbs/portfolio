@@ -1,7 +1,5 @@
 ## Andy Dobbs Portfolio
 
-UX Engineer / Designer
-
 Primary technologies used to create this portfolio:
 * TypeScript / JavaScript
 * React
