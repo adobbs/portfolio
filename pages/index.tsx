@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <Head>
         <title>Andy Dobbs</title>
-        <meta name="description" content="UI/UX expert who codes and designs." />
+        <meta name="description" content="UX Engineer who codes and designs." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="container mx-auto mt-12">
+        <div className="hidden md:block mt-12">
           <Canvas>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />

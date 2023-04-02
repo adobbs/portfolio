@@ -16,7 +16,7 @@ export default function BlueRedPill(props: ThreeElements['mesh']) {
             scale={active ? 1.2 : 1}
             onClick={(e) => setActive(!active)}
         >
-            <capsuleGeometry args={[1, 2.5, 32, 32]} />
+            <capsuleGeometry args={[0.8, 2.5, 32, 32]} />
             <meshStandardMaterial color="blue" />
         </mesh>
     );
