@@ -58,7 +58,7 @@ export default function Home() {
                 <pointLight position={[10, 10, 10]} />
                 <RedPill />
               </Canvas>
-              <Link href="https://github.com/adobbs/portfolio" target="_blank">
+              <Link href="https://github.com/adobbs/winq-demo" target="_blank">
                 <button className="hover:text-[#aaff80] hover:border-[#aaff80] py-2 px-6 border rounded-full">code sample</button>
               </Link>
             </div>
