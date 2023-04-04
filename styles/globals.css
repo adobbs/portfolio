@@ -10,6 +10,7 @@
     height: 100%;
     overflow: hidden;
     pointer-events: none;
+    z-index: -50;
 }
 
 .squares li{
@@ -21,7 +22,6 @@
     border: 1px solid #aaff80;
     animation: animate 25s linear infinite;
     bottom: -150px;
-    
 }
 
 .squares li:nth-child(1){
