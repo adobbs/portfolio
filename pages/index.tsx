@@ -20,7 +20,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="container mx-auto px-4 py-8">
+      <ul className="squares">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      <div className="container mx-auto px-4 py-8 area">
         <nav className="flex flex-row justify-center mb-20">
           <a className="text-zinc-300 hover:text-[#aaff80] underline underline-offset-2 text-base font-light mr-8" 
             href="/AndyDobbsResume.pdf" target="_blank">Resume</a>
