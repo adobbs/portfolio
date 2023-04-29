@@ -51,8 +51,8 @@ export default function Home() {
             priority
             unoptimized
           />
-          <h1 className="text-2xl md:text-4xl text-center mb-2">Andy Dobbs</h1>
-          <h2 className="text-zinc-300 text-base md:text-xl text-center font-light mb-12">UX Engineer</h2>
+          <h1 className="text-2xl md:text-4xl text-center mb-1 md:mb-2">Andy Dobbs</h1>
+          <h2 className="text-zinc-300 text-base md:text-xl text-center font-light mb-12">UX Engineer / Designer</h2>
           <div className="flex flex-row items-center">
             <div className="flex flex-col items-center w-40 sm:w-48 md:w-56">
               <Canvas aria-label="Three dimensional blue pill spinning around slowly" role="img">
