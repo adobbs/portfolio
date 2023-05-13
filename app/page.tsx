@@ -27,7 +27,7 @@ export default function Home() {
               href="https://github.com/adobbs" target="_blank">GitHub</a>
           </nav>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col self-start ml-24 max-w-2xl">
             <Image
               className="rounded-full border border-zinc-700 mb-4"
               src="/headshot.png"
@@ -37,21 +37,25 @@ export default function Home() {
               priority
               unoptimized
             />
-            <h1 className="text-2xl md:text-4xl font-bold tracking-tight uppercase mb-1 md:mb-2">Dobbs Gets it Done</h1>
-            <h2 className="text-zinc-300 text-base md:text-xl font-light mb-12">UX Engineer / Designer</h2>
+            <h1 className="text-2xl md:text-4xl font-bold tracking-tight uppercase mb-4 md:mb-8">Dobbs gets it done.</h1>
+            <p className="text-zinc-400 text-base">I'm Andy, an all-around UI/UX expert with 10+ years as a designer, engineer, writer, and researcher. My passion is complex, data-intensive applications where my systems thinking ability helps teams create dynamic experiences that drive business results.</p>
           </div>
-
-          <div className="flex flex-row items-center">
-            <div className="flex flex-col items-center w-40 sm:w-48 md:w-56">
-              <Link href="/design-case-study">
-                <button className="hover:text-[#aaff80] hover:border-[#aaff80] py-2 px-6 border rounded-full">design case</button>
-              </Link>
-            </div>
-            <div className="flex flex-col items-center w-40 sm:w-48 md:w-56">
-              <Link href="https://github.com/adobbs/winq-demo" target="_blank">
-                <button className="hover:text-[#aaff80] hover:border-[#aaff80] py-2 px-6 border rounded-full">code sample</button>
-              </Link>
-            </div>
+          <div className="flex flex-col self-start ml-24 mt-12 max-w-2xl">
+            <h2 className="text-xl md:text-2xl font-semibold tracking-tight uppercase mb-2 md:mb-4">Key Results</h2>
+            <p className="text-zinc-400 text-base italic mb-2">Designed reporting and gamification features utilized to optimize care for ~800k patients.
+              These features helped a large health system generate $20m in surplus revenue.</p>
+            <p className="text-zinc-400 text-base self-end mr-20 mb-2">&ndash; Lead Product Designer @ Stellar Health</p>
+            <p className="text-zinc-400 text-base italic mt-4 mb-2">Designed AI / ML personalization features for an iOS, Android, and web platform that
+              spanned 22 languages. 87% of surveyed users said Virgin Pulse changed their lives.</p>
+            <p className="text-zinc-400 text-base self-end mr-20 mb-2">&ndash; Senior UX Designer @ Virgin Pulse</p>
+            <p className="text-zinc-400 text-base italic mt-4 mb-2">Created the design system for analytics dashboards and data visualization. Self-serve
+              reports helped the company achieve a 95% client retention rate across 4,000 enterprise clients—including 84 of the Global Fortune 500.</p>
+            <p className="text-zinc-400 text-base self-end mr-20">&ndash; Senior UX Designer @ Virgin Pulse</p>
+          </div>
+          <div className="flex flex-col self-start ml-24 mt-12 max-w-2xl">
+            <h2 className="text-xl md:text-2xl font-semibold tracking-tight uppercase mb-2 md:mb-4">Work Samples</h2>
+            <p className="text-zinc-400 text-base mb-4">My personalization design <Link href="/design-case-study" className="underline underline-offset-2 hover:text-[#aaff80]">case study</Link> provides a window into my process. Code samples are on <a href="https://github.com/adobbs" target="_blank" className="underline underline-offset-2 hover:text-[#aaff80]">GitHub</a>. Data visualization and analytics dashboard samples are available upon request.</p>
+            <p className="text-zinc-400 text-base">Thank you!</p>
           </div>
         </div>
       </div>
