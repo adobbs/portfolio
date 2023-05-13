@@ -7,21 +7,23 @@ export default function DesignCaseStudy() {
         <>
             <Head>
             <title>Andy Dobbs - Design Case Study</title>
-            <meta name="description" content="UI/UX expert who codes and designs." />
+            <meta name="description" content="UX Engineer / Designer" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="container mx-auto px-4 py-8">
-                <nav className="flex flex-row justify-center mb-20">
-                    <Link className="text-zinc-300 hover:text-[#aaff80] underline underline-offset-2 text-base font-light mr-8" 
-                        href="/">Home</Link>
-                    <a className="text-zinc-300 hover:text-[#aaff80] underline underline-offset-2 text-base font-light mr-8" 
-                        href="/AndyDobbsResume.pdf" target="_blank">Resume</a>
-                    <a className="text-zinc-300 hover:text-[#aaff80] underline underline-offset-2 text-base font-light mr-8" 
-                        href="https://www.linkedin.com/in/dobbs/" target="_blank">LinkedIn</a>
-                    <a className="text-zinc-300 hover:text-[#aaff80] underline underline-offset-2 text-base font-light" 
-                        href="https://github.com/adobbs" target="_blank">GitHub</a>
-                </nav>
+                <div className='flex flex-col items-center'>
+                    <nav className="inline-flex flex-row justify-center px-6 py-2 mb-20 rounded-full border border-zinc-700 bg-zinc-800">
+                        <Link className="text-zinc-300 hover:text-[#aaff80] text-sm mr-6" 
+                            href="/">Home</Link>
+                        <a className="text-zinc-300 hover:text-[#aaff80] text-sm mr-6" 
+                            href="/AndyDobbsResume.pdf" target="_blank">Resume</a>
+                        <a className="text-zinc-300 hover:text-[#aaff80] text-sm mr-6" 
+                            href="https://www.linkedin.com/in/dobbs/" target="_blank">LinkedIn</a>
+                        <a className="text-zinc-300 hover:text-[#aaff80] text-sm" 
+                            href="https://github.com/adobbs" target="_blank">GitHub</a>
+                    </nav>
+                </div>
                 <h1 className="text-2xl md:text-4xl text-center mb-12">AI/ML Health Conversations</h1>
                 <div className="flex flex-col items-center">
                     <section className="bg-zinc-700 text-base max-w-3xl mb-6 p-4 md:py-8 md:px-10 border rounded-lg">
