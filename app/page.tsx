@@ -17,8 +17,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container mx-auto px-4">
-        <div className='flex flex-col md:mx-16 lg:mx-32 py-8 items-center border-l border-r border-zinc-700 bg-zinc-900'>
+        <div className='flex flex-col md:mx-16 lg:mx-32 pt-8 pb-20 items-center border-l border-r border-zinc-700 bg-zinc-900'>
           <nav className="inline-flex flex-row justify-center px-6 py-2 mb-20 rounded-full border border-zinc-700 bg-zinc-800">
+            <Link className="text-zinc-300 hover:text-[#aaff80] text-sm mr-6" 
+              href="/design-case-study">Case Study</Link>
             <a className="text-zinc-300 hover:text-[#aaff80] text-sm mr-6" 
               href="/AndyDobbsResume.pdf" target="_blank">Resume</a>
             <a className="text-zinc-300 hover:text-[#aaff80] text-sm mr-6" 
@@ -54,8 +56,40 @@ export default function Home() {
           </div>
           <div className="flex flex-col self-start ml-24 mt-12 max-w-2xl">
             <h2 className="text-xl md:text-2xl font-semibold tracking-tight uppercase mb-2 md:mb-4">Work Samples</h2>
-            <p className="text-zinc-400 text-base mb-4">My personalization design <Link href="/design-case-study" className="underline underline-offset-2 hover:text-[#aaff80]">case study</Link> provides a window into my process. Code samples are on <a href="https://github.com/adobbs" target="_blank" className="underline underline-offset-2 hover:text-[#aaff80]">GitHub</a>. Data visualization and analytics dashboard samples are available upon request.</p>
-            <p className="text-zinc-400 text-base">Thank you!</p>
+            <p className="text-zinc-400 text-base mb-4">Check out my <Link href="/design-case-study" className="underline underline-offset-2 hover:text-[#aaff80]">case study</Link> for a design deep dive. Code samples are on <a href="https://github.com/adobbs" target="_blank" className="underline underline-offset-2 hover:text-[#aaff80]">GitHub</a>.</p>
+            <p className="text-zinc-400 text-base">Below are snapshots of my latest work. Thank you!</p>
+          </div>
+          <div className="flex flex-col self-start mx-24 mt-12">
+          <h3 className="text-lg md:text-xl font-semibold tracking-tight uppercase mb-2 md:mb-4">Embedded Insights Component</h3>
+            <Image
+                className="rounded-3xl max-w-4xl mb-12"
+                src="/embedded-insights.png"
+                alt="Embedded insights"
+                width={1068}
+                height={1138}
+                priority
+                unoptimized
+            />
+            <h3 className="text-lg md:text-xl font-semibold tracking-tight uppercase mb-2 md:mb-4">Upcoming Visits Email</h3>
+            <Image
+                className="rounded-3xl max-w-4xl mb-12"
+                src="/upcoming-visits.png"
+                alt="Upcoming visits"
+                width={1000}
+                height={1023}
+                priority
+                unoptimized
+            />
+            <h3 className="text-lg md:text-xl font-semibold tracking-tight uppercase mb-2 md:mb-4">User Activity Report</h3>
+            <Image
+                className="rounded-3xl max-w-4xl"
+                src="/user-activity.png"
+                alt="User activity report"
+                width={1440}
+                height={1718}
+                priority
+                unoptimized
+            />
           </div>
         </div>
       </div>
