@@ -40,17 +40,17 @@ export default function Home() {
               unoptimized
             />
             <h1 className="text-2xl md:text-4xl font-bold tracking-tight uppercase mb-4 md:mb-8">Dobbs gets it done.</h1>
-            <p className="text-zinc-400 text-base mb-12 max-w-prose">I'm Andy, an all-around UI/UX expert with 10+ years as a designer, engineer, writer, and researcher. My passion is complex, data-intensive applications where my systems thinking ability helps teams create dynamic experiences that drive business results.</p>
+            <p className="text-zinc-400 text-base mb-12 max-w-prose">I&apos;m Andy, an all-around UI/UX expert with 10+ years as a designer, engineer, writer, and researcher. My passion is complex, data-intensive applications where my systems thinking ability helps teams create dynamic experiences that drive business results.</p>
             <h2 className="text-xl md:text-2xl font-semibold tracking-tight uppercase mb-2 md:mb-4">Key Results</h2>
             <p className="text-zinc-400 text-base italic mb-2 max-w-prose">Designed reporting and gamification features utilized to optimize care for ~800k patients.
               These features helped a large health system generate $20m in surplus revenue.</p>
-            <p className="text-zinc-400 text-base sm:ml-48 lg:ml-64 mb-2">`&ndash;` Lead Product Designer @ Stellar Health</p>
+            <p className="text-zinc-400 text-base sm:ml-48 lg:ml-64 mb-2">&ndash; Lead Product Designer @ Stellar Health</p>
             <p className="text-zinc-400 text-base italic mt-4 mb-2 max-w-prose">Designed AI / ML personalization features for an iOS, Android, and web platform that
               spanned 22 languages. 87% of surveyed users said Virgin Pulse changed their lives.</p>
-            <p className="text-zinc-400 text-base sm:ml-48 lg:ml-64 mb-2">`&ndash;` Senior UX Designer @ Virgin Pulse</p>
+            <p className="text-zinc-400 text-base sm:ml-48 lg:ml-64 mb-2">&ndash; Senior UX Designer @ Virgin Pulse</p>
             <p className="text-zinc-400 text-base italic mt-4 mb-2 max-w-prose">Created the design system for analytics dashboards and data visualization. Self-serve
               reports helped the company achieve a 95% client retention rate across 4,000 enterprise clients—including 84 of the Global Fortune 500.</p>
-            <p className="text-zinc-400 text-base sm:ml-48 lg:ml-64 mb-12">`&ndash;` Senior UX Designer @ Virgin Pulse</p>
+            <p className="text-zinc-400 text-base sm:ml-48 lg:ml-64 mb-12">&ndash; Senior UX Designer @ Virgin Pulse</p>
             <h2 className="text-xl md:text-2xl font-semibold tracking-tight uppercase mb-2 md:mb-4">Work Samples</h2>
             <p className="text-zinc-400 text-base mb-4 max-w-prose">Check out my <Link href="/design-case-study" className="underline underline-offset-2 hover:text-[#aaff80]">case study</Link> for a design deep dive. Code samples are on <a href="https://github.com/adobbs" target="_blank" className="underline underline-offset-2 hover:text-[#aaff80]">GitHub</a>.</p>
             <p className="text-zinc-400 text-base mb-12 max-w-prose">Below are snapshots of my latest work. Thank you!</p>
