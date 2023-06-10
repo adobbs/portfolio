@@ -54,7 +54,8 @@ export default function Home() {
             <h2 className="text-xl md:text-2xl font-semibold tracking-tight uppercase mb-2 md:mb-4">Work Samples</h2>
             <p className="text-zinc-400 text-base mb-4 max-w-prose">Check out my <Link href="/design-case-study" className="underline underline-offset-2 hover:text-[#aaff80]">case study</Link> for a design deep dive. Code samples are on <a href="https://github.com/adobbs" target="_blank" className="underline underline-offset-2 hover:text-[#aaff80]">GitHub</a>.</p>
             <p className="text-zinc-400 text-base mb-12 max-w-prose">Below are snapshots of my latest work. Thank you!</p>
-            <h3 className="text-lg md:text-xl font-semibold tracking-tight uppercase mb-2 md:mb-4">Embedded Insights Component</h3>
+            <h3 className="text-lg md:text-xl font-semibold tracking-tight uppercase mb-2">Embedded Insights Component</h3>
+            <p className="text-zinc-400 text-base mb-4 max-w-prose">This component captures activity metrics and translates that activity into the impact on people's lives. Copy, data visualization, and UI design are mine. Illustration is stock.</p>
             <Image
                 className="rounded-3xl mb-12"
                 src="/embedded-insights.png"
@@ -64,7 +65,8 @@ export default function Home() {
                 priority
                 unoptimized
             />
-            <h3 className="text-lg md:text-xl font-semibold tracking-tight uppercase mb-2 md:mb-4">Upcoming Visits Email</h3>
+            <h3 className="text-lg md:text-xl font-semibold tracking-tight uppercase mb-2">Upcoming Visits Email</h3>
+            <p className="text-zinc-400 text-base mb-4 max-w-prose">This triggered email reminds users when they may need to re-engage with the app. Copy, design, and illustration are mine.</p>
             <Image
                 className="rounded-3xl mb-12"
                 src="/upcoming-visits.png"
@@ -74,7 +76,8 @@ export default function Home() {
                 priority
                 unoptimized
             />
-            <h3 className="text-lg md:text-xl font-semibold tracking-tight uppercase mb-2 md:mb-4">User Activity Report</h3>
+            <h3 className="text-lg md:text-xl font-semibold tracking-tight uppercase mb-2">User Activity Report</h3>
+            <p className="text-zinc-400 text-base mb-4 max-w-prose">This report provides critical information to practice managers about staff activity. Copy, data visualization, and UI design are mine.</p>
             <Image
                 className="rounded-3xl"
                 src="/user-activity.png"
