@@ -55,7 +55,7 @@ export default function Home() {
             <p className="text-zinc-400 text-base mb-4 max-w-prose">Check out my <Link href="/design-case-study" className="underline underline-offset-2 hover:text-[#aaff80]">case study</Link> for a design deep dive. Code samples are on <a href="https://github.com/adobbs" target="_blank" className="underline underline-offset-2 hover:text-[#aaff80]">GitHub</a>.</p>
             <p className="text-zinc-400 text-base mb-12 max-w-prose">Below are snapshots of my latest work. Thank you!</p>
             <h3 className="text-lg md:text-xl font-semibold tracking-tight uppercase mb-2">Embedded Insights Component</h3>
-            <p className="text-zinc-400 text-base mb-4 max-w-prose">This component captures activity metrics and translates that activity into the impact on people's lives. Copy, data visualization, and UI design are mine. Illustration is stock.</p>
+            <p className="text-zinc-400 text-base mb-4 max-w-prose">This component captures activity metrics and translates that activity into the impact on people&apos;s lives. Copy, data visualization, and UI design are mine. Illustration is stock.</p>
             <Image
                 className="rounded-3xl mb-12"
                 src="/embedded-insights.png"
