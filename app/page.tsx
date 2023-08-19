@@ -18,10 +18,13 @@ export default function Home() {
       </Head>
       <nav className="flex justify-between items-center p-8 bg-black">
         <div className="flex gap-12">
-          <div className="relative flex items-center w-[256px] h-12 rounded-l-full bg-white text-black
-              after:absolute after:content-[''] after:w-16 after:h-12 after:top-0 after:left-[224px] after:bg-white after:-skew-x-[20deg]">
-            <div className="ml-8 text-2xl font-extrabold uppercase italic">
+          <div className="relative flex items-center w-[96px] lg:w-[128px] xl:w-[224px] 2xl:w-[256px] h-12 rounded-l-full bg-white text-black
+              after:absolute after:content-[''] after:w-16 after:h-12 after:top-0 after:left-[64px] lg:after:left-[96px] xl:after:left-[192px] 2xl:after:left-[224px] after:bg-white after:-skew-x-[20deg]">
+            <div className="hidden xl:block ml-8 text-2xl font-extrabold uppercase italic">
               Dobbs
+            </div>
+            <div className="block xl:hidden ml-8 text-2xl font-extrabold uppercase italic">
+              D
             </div>
           </div>
           <div className="w-8 h-12 bg-white -skew-x-[20deg]"></div>
