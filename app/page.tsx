@@ -69,6 +69,13 @@ export default function Home() {
           unoptimized
         />
       </div>
+      <div className="relative w-[600px] p-12 -skew-x-[20deg] ml-[128px] mt-[128px] mr-auto bg-[#ffe347]">
+        <p className="m-0 text-2xl font-medium skew-x-[20deg] text-black">I believe great teams&ndash;and teammates&ndash;strive for continuous <strong className="font-extrabold">collaboration</strong> and <strong className="font-extrabold">iteration</strong>.</p>
+      </div>
+
+      <div className="relative w-[600px] p-12 -skew-x-[20deg] mr-[128px] mt-[128px] ml-auto bg-white">
+        <p className="m-0 text-2xl font-medium skew-x-[20deg] text-black">Check out my design <Link href="/design-case-study" className="font-extrabold hover:text-[#ffe347]">case study</Link>. Code samples on <a className="font-extrabold hover:text-[#ffe347]" href="https://github.com/adobbs" target="_blank">GitHub</a>. More upon request.</p>
+      </div>
       <div className="mx-auto md:px-4 max-w-[1536px]">
         <div className='flex flex-col md:mx-16 lg:mx-32 pt-8 pb-20 items-center border-l border-r border-zinc-700 bg-zinc-900'>
           
