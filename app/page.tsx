@@ -16,7 +16,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className="flex justify-between items-center p-8 bg-black">
+      <nav className="flex justify-between items-center px-8 pt-8 bg-black">
         <div className="flex gap-12">
           <div className="relative hidden lg:flex items-center lg:w-[128px] xl:w-[224px] 2xl:w-[256px] h-12 rounded-l-full bg-white text-black
               after:absolute after:content-[''] after:w-16 after:h-12 after:top-0 lg:after:left-[96px] xl:after:left-[192px] 2xl:after:left-[224px] after:bg-white after:-skew-x-[20deg]">
@@ -52,6 +52,23 @@ export default function Home() {
           </div>
         </div>
       </nav>
+      <div className="flex justify-center items-center mt-32">
+        <h1 className="text-6xl font-extrabold uppercase"><em className="italic text-[#ffe347]">Dobbs</em> Gets it Done</h1>
+      </div>
+      <div className="flex justify-center items-center mt-12">
+        <p className="text-4xl font-medium">Great work starts with <em className="italic text-[#ffe347]">attitude</em> and <em className="italic text-[#ffe347]">effort</em>.</p>
+      </div>
+      <div className="flex justify-center items-center mt-32">
+        <Image
+          className="rounded-3xl mb-12"
+          src="/embedded-insights.png"
+          alt="Embedded insights"
+          width={1068}
+          height={1138}
+          priority
+          unoptimized
+        />
+      </div>
       <div className="mx-auto md:px-4 max-w-[1536px]">
         <div className='flex flex-col md:mx-16 lg:mx-32 pt-8 pb-20 items-center border-l border-r border-zinc-700 bg-zinc-900'>
           
