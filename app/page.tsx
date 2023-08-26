@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Head>
         <title>Andy Dobbs</title>
-        <meta name="description" content="Product Designer | Frontend Engineer | UI/UX Expert" />
+        <meta name="description" content="Product Designer | Frontend Engineer | UX Expert" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

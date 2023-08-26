@@ -7,7 +7,7 @@ export default function DesignCaseStudy() {
         <>
             <Head>
             <title>Andy Dobbs - Design Case Study</title>
-            <meta name="description" content="UX Engineer / Designer" />
+            <meta name="description" content="Product Designer | Frontend Engineer | UX Expert" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
             </Head>
