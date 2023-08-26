@@ -25,12 +25,12 @@ export default function Home() {
           <div className="hidden xl:block -ml-8 w-8 h-12 bg-white -skew-x-[13deg]"></div>
         </div>
         <div className="flex gap-12">
-          <Link className="text-2xl sm:text-3xl font-semibold text-white uppercase hover:text-[#ffe347] hover:cursor-pointer" 
+          <Link className="text-xl sm:text-3xl font-semibold text-white uppercase hover:text-[#ffe347] hover:cursor-pointer" 
             href="/design-case-study"
           >
             Case Study
           </Link>
-          <a className="text-2xl sm:text-3xl font-semibold text-white uppercase hover:text-[#ffe347] hover:cursor-pointer" 
+          <a className="text-xl sm:text-3xl font-semibold text-white uppercase hover:text-[#ffe347] hover:cursor-pointer" 
             href="/AndyDobbsResume.pdf" target="_blank">Resume</a>
         </div>
         <div className="flex gap-12">
@@ -57,10 +57,10 @@ export default function Home() {
         </div>
       </nav>
       <div className="flex justify-center items-center mt-32">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase"><em className="italic text-[#ffe347]">Dobbs</em> Gets it Done</h1>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase"><em className="italic text-[#ffe347]">Dobbs</em> Gets it Done</h1>
       </div>
       <div className="flex justify-center items-center mt-12">
-        <p className="text-2xl sm:text-3xl md:text-4xl font-medium">Great work starts with <em className="italic text-[#ffe347]">attitude</em> and <em className="italic text-[#ffe347]">effort</em>.</p>
+        <p className="text-xl sm:text-3xl md:text-4xl font-medium">Great work starts with <em className="italic text-[#ffe347]">attitude</em> and <em className="italic text-[#ffe347]">effort</em>.</p>
       </div>
       <div className="flex justify-center items-center mt-32 px-8">
         <Image
