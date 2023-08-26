@@ -25,12 +25,12 @@ export default function Home() {
           <div className="hidden xl:block -ml-8 w-8 h-12 bg-white -skew-x-[20deg]"></div>
         </div>
         <div className="flex gap-12">
-          <Link className="text-3xl font-semibold text-white uppercase hover:text-[#ffe347] hover:cursor-pointer" 
+          <Link className="text-2xl sm:text-3xl font-semibold text-white uppercase hover:text-[#ffe347] hover:cursor-pointer" 
             href="/design-case-study"
           >
             Case Study
           </Link>
-          <a className="text-3xl font-semibold text-white uppercase hover:text-[#ffe347] hover:cursor-pointer" 
+          <a className="text-2xl sm:text-3xl font-semibold text-white uppercase hover:text-[#ffe347] hover:cursor-pointer" 
             href="/AndyDobbsResume.pdf" target="_blank">Resume</a>
         </div>
         <div className="flex gap-12">
@@ -57,12 +57,12 @@ export default function Home() {
         </div>
       </nav>
       <div className="flex justify-center items-center mt-32">
-        <h1 className="text-6xl font-extrabold uppercase"><em className="italic text-[#ffe347]">Dobbs</em> Gets it Done</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase"><em className="italic text-[#ffe347]">Dobbs</em> Gets it Done</h1>
       </div>
       <div className="flex justify-center items-center mt-12">
-        <p className="text-4xl font-medium">Great work starts with <em className="italic text-[#ffe347]">attitude</em> and <em className="italic text-[#ffe347]">effort</em>.</p>
+        <p className="text-2xl sm:text-3xl md:text-4xl font-medium">Great work starts with <em className="italic text-[#ffe347]">attitude</em> and <em className="italic text-[#ffe347]">effort</em>.</p>
       </div>
-      <div className="flex justify-center items-center mt-32">
+      <div className="flex justify-center items-center mt-32 px-8">
         <Image
           className="rounded-3xl mb-12"
           src="/embedded-insights.png"
@@ -73,11 +73,11 @@ export default function Home() {
           unoptimized
         />
       </div>
-      <div className="relative w-[600px] p-12 -skew-x-[20deg] ml-[128px] mt-[128px] mr-auto bg-[#ffe347]">
-        <p className="m-0 text-2xl font-medium skew-x-[20deg] text-black">I believe great teams&ndash;and teammates&ndash;strive for continuous <strong className="font-extrabold">collaboration</strong> and <strong className="font-extrabold">iteration</strong>.</p>
+      <div className="relative w-4/5 md:w-[600px] p-8 sm:p-12 -skew-x-[20deg] mt-[128px] ml-auto lg:ml-[128px] mr-auto bg-[#ffe347]">
+        <p className="m-0 text-lg sm:text-xl md:text-2xl font-medium skew-x-[20deg] text-black">I believe great teams&ndash;and teammates&ndash;prioritize <strong className="font-extrabold">collaboration</strong> and <strong className="font-extrabold">iteration</strong>.</p>
       </div>
-      <div className="relative w-[600px] p-12 -skew-x-[20deg] mr-[128px] mt-[128px] ml-auto bg-white">
-        <p className="m-0 text-2xl font-medium skew-x-[20deg] text-black">Check out my design <Link href="/design-case-study" className="font-extrabold hover:text-[#ffe347]">case study</Link>. Code samples on <a className="font-extrabold hover:text-[#ffe347]" href="https://github.com/adobbs" target="_blank">GitHub</a>. More upon request.</p>
+      <div className="relative w-4/5 md:w-[600px] p-8 sm:p-12 -skew-x-[20deg] mt-[128px] mr-auto lg:mr-[128px] ml-auto bg-white">
+        <p className="m-0 text-lg sm:text-xl md:text-2xl font-medium skew-x-[20deg] text-black">Check out my design <Link href="/design-case-study" className="underline font-extrabold hover:text-[#ffe347]">case study</Link>. Code samples on <a className="underline font-extrabold hover:text-[#ffe347]" href="https://github.com/adobbs" target="_blank">GitHub</a>. More upon request.</p>
       </div>
       <div className="flex h-4 mt-40 ml-8 mr-8 mb-8 rounded-full bg-white"></div>
     </>
