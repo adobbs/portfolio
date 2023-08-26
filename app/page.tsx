@@ -19,10 +19,10 @@ export default function Home() {
       <nav className="flex justify-between items-center px-8 pt-8 bg-black">
         <div className="flex gap-12">
           <div className="relative hidden lg:flex items-center lg:w-[128px] xl:w-[224px] 2xl:w-[256px] h-12 rounded-l-full bg-white text-black
-              after:absolute after:content-[''] after:w-16 after:h-12 after:top-0 lg:after:left-[96px] xl:after:left-[192px] 2xl:after:left-[224px] after:bg-white after:-skew-x-[20deg]">
+              after:absolute after:content-[''] after:w-16 after:h-12 after:top-0 lg:after:left-[96px] xl:after:left-[192px] 2xl:after:left-[224px] after:bg-white after:-skew-x-[13deg]">
           </div>
-          <div className="hidden xl:block w-8 h-12 bg-white -skew-x-[20deg]"></div>
-          <div className="hidden xl:block -ml-8 w-8 h-12 bg-white -skew-x-[20deg]"></div>
+          <div className="hidden xl:block w-8 h-12 bg-white -skew-x-[13deg]"></div>
+          <div className="hidden xl:block -ml-8 w-8 h-12 bg-white -skew-x-[13deg]"></div>
         </div>
         <div className="flex gap-12">
           <Link className="text-2xl sm:text-3xl font-semibold text-white uppercase hover:text-[#ffe347] hover:cursor-pointer" 
@@ -34,9 +34,9 @@ export default function Home() {
             href="/AndyDobbsResume.pdf" target="_blank">Resume</a>
         </div>
         <div className="flex gap-12">
-          <div className="hidden xl:block w-8 h-12 bg-white -skew-x-[20deg]"></div>
+          <div className="hidden xl:block w-8 h-12 bg-white -skew-x-[13deg]"></div>
           <div className="relative hidden lg:flex justify-end items-center gap-4 lg:w-[192px] xl:w-[288px] 2xl:w-[320px] h-12 rounded-r-full bg-white text-black 
-            before:absolute before:content-[''] before:w-16 before:h-12 lg:before:right-[160px] xl:before:right-[256px] 2xl:before:right-[288px] before:bg-white before:-skew-x-[20deg]">
+            before:absolute before:content-[''] before:w-16 before:h-12 lg:before:right-[160px] xl:before:right-[256px] 2xl:before:right-[288px] before:bg-white before:-skew-x-[13deg]">
               <a href="https://www.linkedin.com/in/dobbs/" target="_blank" className="hover:text-[#ffe347] hover:cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -73,11 +73,11 @@ export default function Home() {
           unoptimized
         />
       </div>
-      <div className="relative w-4/5 md:w-[600px] p-8 sm:p-12 -skew-x-[20deg] mt-[128px] ml-auto lg:ml-[128px] mr-auto bg-[#ffe347]">
-        <p className="m-0 text-lg sm:text-xl md:text-2xl font-medium skew-x-[20deg] text-black">I believe great teams&ndash;and teammates&ndash;prioritize <strong className="font-extrabold">collaboration</strong> and <strong className="font-extrabold">iteration</strong>.</p>
+      <div className="relative w-4/5 md:w-[600px] p-8 sm:p-12 -skew-x-[13deg] mt-[128px] ml-auto lg:ml-[128px] mr-auto bg-[#ffe347]">
+        <p className="m-0 text-lg sm:text-xl md:text-2xl font-medium skew-x-[13deg] text-black">I believe great teams&ndash;and teammates&ndash;prioritize <strong className="font-extrabold">collaboration</strong> and <strong className="font-extrabold">iteration</strong>.</p>
       </div>
-      <div className="relative w-4/5 md:w-[600px] p-8 sm:p-12 -skew-x-[20deg] mt-[128px] mr-auto lg:mr-[128px] ml-auto bg-white">
-        <p className="m-0 text-lg sm:text-xl md:text-2xl font-medium skew-x-[20deg] text-black">Check out my design <Link href="/design-case-study" className="underline font-extrabold hover:text-[#ffe347]">case study</Link>. Code samples on <a className="underline font-extrabold hover:text-[#ffe347]" href="https://github.com/adobbs" target="_blank">GitHub</a>. More upon request.</p>
+      <div className="relative w-4/5 md:w-[600px] p-8 sm:p-12 -skew-x-[13deg] mt-[128px] mr-auto lg:mr-[128px] ml-auto bg-white">
+        <p className="m-0 text-lg sm:text-xl md:text-2xl font-medium skew-x-[13deg] text-black">Check out my design <Link href="/design-case-study" className="underline font-extrabold hover:text-[#ffe347]">case study</Link>. Code samples on <a className="underline font-extrabold hover:text-[#ffe347]" href="https://github.com/adobbs" target="_blank">GitHub</a>. More upon request.</p>
       </div>
       <div className="flex h-4 mt-40 ml-8 mr-8 mb-8 rounded-full bg-white"></div>
     </>
