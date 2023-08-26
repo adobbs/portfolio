@@ -64,7 +64,7 @@ export default function Home() {
       </div>
       <div className="flex justify-center items-center mt-32 px-8">
         <Image
-          className="rounded-3xl mb-12"
+          className="rounded-xl sm:rounded-3xl mb-12"
           src="/embedded-insights.png"
           alt="Embedded insights"
           width={1068}
