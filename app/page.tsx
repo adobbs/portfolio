@@ -73,10 +73,10 @@ export default function Home() {
           unoptimized
         />
       </div>
-      <div className="relative w-4/5 md:w-[600px] p-8 sm:p-12 -skew-x-[13deg] mt-[128px] ml-auto lg:ml-[128px] mr-auto bg-[#ffe347]">
+      <div className="relative w-4/5 md:w-[600px] p-8 sm:p-12 -skew-x-[13deg] mt-[128px] ml-auto lg:ml-[128px] xl:ml-[192px] 2xl:ml-[256px]  mr-auto bg-[#ffe347]">
         <p className="m-0 text-base sm:text-xl md:text-2xl font-medium skew-x-[13deg] text-black">I believe great teams&ndash;and teammates&ndash;prioritize <strong className="font-extrabold">collaboration</strong> and <strong className="font-extrabold">iteration</strong>.</p>
       </div>
-      <div className="relative w-4/5 md:w-[600px] p-8 sm:p-12 -skew-x-[13deg] mt-[128px] mr-auto lg:mr-[128px] ml-auto bg-white">
+      <div className="relative w-4/5 md:w-[600px] p-8 sm:p-12 -skew-x-[13deg] mt-[128px] mr-auto lg:mr-[128px] xl:mr-[192px] 2xl:mr-[256px] ml-auto bg-white">
         <p className="m-0 text-base sm:text-xl md:text-2xl font-medium skew-x-[13deg] text-black">Check out my design <Link href="/design-case-study" className="underline font-extrabold hover:text-[#ffe347]">case study</Link>. Code samples on <a className="underline font-extrabold hover:text-[#ffe347]" href="https://github.com/adobbs" target="_blank">GitHub</a>. More upon request.</p>
       </div>
       <div className="flex h-4 mt-40 ml-8 mr-8 mb-8 rounded-full bg-white"></div>
