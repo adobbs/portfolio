@@ -37,11 +37,11 @@ export default function Home() {
                 <p className="text-xl sm:text-3xl md:text-4xl font-medium uppercase">Highlights</p>
                 <div className="w-4 h-12 bg-[#ffe347] -skew-x-[13deg]"></div>
                 <div className="w-4 h-6 bg-white -skew-x-[13deg]"></div>
-                <div className="w-4 h-6 bg-white -skew-x-[13deg]"></div>
+                <div className="w-4 h-6 bg-black -skew-x-[13deg]"></div>
                 <div className="w-4 h-6 bg-white -skew-x-[13deg]"></div>
                 <div className="w-4 h-6 bg-[#ffe347] -skew-x-[13deg]"></div>
                 <div className="w-4 h-6 bg-white -skew-x-[13deg]"></div>
-                <div className="w-4 h-6 bg-white -skew-x-[13deg]"></div>
+                <div className="w-4 h-6 bg-black -skew-x-[13deg]"></div>
                 <div className="w-4 h-6 bg-[#ffe347] -skew-x-[13deg]"></div>
                 <div className="w-4 h-6 bg-white -skew-x-[13deg]"></div>
             </div>
