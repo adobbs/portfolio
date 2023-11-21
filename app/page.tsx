@@ -14,7 +14,7 @@ export default function Home() {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div className="flex gap-4 justify-center items-center mt-16">
+        <div className="hidden lg:flex gap-4 justify-center items-center mt-16">
             <div className="w-8 h-6 bg-white -skew-x-[13deg]"></div>
             <div className="w-32 h-6 bg-white -skew-x-[13deg]"></div>
             <div className="w-8 h-6 bg-black -skew-x-[13deg]"></div>
@@ -22,22 +22,22 @@ export default function Home() {
             <div className="w-8 h-6 bg-[#ffe347] -skew-x-[13deg]"></div>
             <div className="w-8 h-6 bg-white -skew-x-[13deg]"></div>
         </div>
-        <div className="flex gap-4 justify-center items-center mt-32">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase">Andy</h1>
-            <div className="w-4 h-16 bg-[#ffe347] -skew-x-[13deg]"></div>
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase">Dobbs</h1>
+        <div className="flex gap-4 justify-center items-center mt-16 lg:mt-32">
+            <h1 className="text-3xl lg:text-6xl font-extrabold uppercase">Andy</h1>
+            <div className="w-2 lg:w-4 h-8 lg:h-16 bg-[#ffe347] -skew-x-[13deg]"></div>
+            <h1 className="text-3xl lg:text-6xl font-extrabold uppercase">Dobbs</h1>
         </div>
-        <div className="flex justify-center mt-16">
-            <p className="text-xl sm:text-3xl md:text-4xl font-semibold">I create products that make companies more profitable.</p>
+        <div className="flex justify-center mt-8 lg:mt-16">
+            <p className="p-2 sm:p-0 text-center text-xl lg:text-4xl font-semibold">I create products that make companies more profitable.</p>
         </div>
-        <div className="mx-auto mt-48 px-4 max-w-[1024px]">
-            <div className="flex items-center justify-between">
+        <div className="mx-auto mt-24 lg:mt-48 px-4 max-w-[1024px]">
+            <div className="hidden lg:flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                    <div className="w-4 h-12 bg-[#ffe347] -skew-x-[13deg]"></div>
-                    <p className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase">Highlights</p>
-                    <div className="w-4 h-12 bg-[#ffe347] -skew-x-[13deg]"></div>
+                    <div className="w-4 h-6 lg:h-12 bg-[#ffe347] -skew-x-[13deg]"></div>
+                    <p className="text-4xl font-extrabold uppercase">Highlights</p>
+                    <div className="w-4 h-6 lg:h-12 bg-[#ffe347] -skew-x-[13deg]"></div>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="hidden lg:flex items-center gap-4">
                     <div className="w-4 h-6 bg-white -skew-x-[13deg]"></div>
                     <div className="w-4 h-6 bg-white -skew-x-[13deg]"></div>
                     <div className="w-16 h-6 bg-white -skew-x-[13deg]"></div>
@@ -48,7 +48,7 @@ export default function Home() {
                     <div className="w-16 h-6 bg-white -skew-x-[13deg]"></div>
                 </div>
             </div>
-            <div className="flex flex-col gap-16 mt-16 text-2xl">
+            <div className="flex flex-col gap-16 mt-16 text-sm sm:text-base lg:text-2xl">
                 <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-6 bg-white -skew-x-[13deg]"></div>
