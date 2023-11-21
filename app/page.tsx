@@ -82,7 +82,7 @@ export default function Home() {
                         <div className="w-2 h-6 bg-white -skew-x-[13deg]"></div>
                         <div className="font-extrabold uppercase">Arnold</div>
                     </div>
-                    <p className="mt-4 leading-relaxed font-semibold">My client work alone funded a 7-person design team during a dry spell. I helped build the digital presence used by millions of customers for some of the largest brands in the world: Jack Daniel's, Progressive, Sanofi, American Eagle, Santander, Ocean Spray, and more.</p>
+                    <p className="mt-4 leading-relaxed font-semibold">My client work alone funded a 7-person design team during a dry spell. I helped build the digital presence used by millions of customers for some of the largest brands in the world: Jack Daniel&apos;s, Progressive, Sanofi, American Eagle, Santander, Ocean Spray, and more.</p>
                 </div>
             </div>
         </div>
