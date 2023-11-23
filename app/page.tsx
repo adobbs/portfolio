@@ -50,35 +50,35 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-16 mt-16 text-sm sm:text-base lg:text-2xl">
                 <div className="flex flex-col">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                         <div className="w-1 lg:w-2 h-6 lg:h-8 bg-white -skew-x-[13deg]"></div>
                         <div className="font-extrabold uppercase">Goldcast</div>
                     </div>
                     <p className="mt-4 leading-relaxed font-semibold">I created enterprise-readiness features that served high priority needs for 17% of existing customers, including all of the largest clients. This enabled go-to-market to target new business with organizations that have an annual contract value 2-3x the average customer.</p>
                 </div>
                 <div className="flex flex-col">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                         <div className="w-1 lg:w-2 h-6 lg:h-8 bg-white -skew-x-[13deg]"></div>
                         <div className="font-extrabold uppercase">Stellar Health</div>
                     </div>
                     <p className="mt-4 leading-relaxed font-semibold">I designed reporting and gamification features utilized to optimize care for 800k patients. These features helped a large health system generate $20m in surplus revenue.</p>
                 </div>
                 <div className="flex flex-col">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                         <div className="w-1 lg:w-2 h-6 lg:h-8 bg-white -skew-x-[13deg]"></div>
                         <div className="font-extrabold uppercase">Virgin Pulse</div>
                     </div>
                     <p className="mt-4 leading-relaxed font-semibold">I created AI / ML features for a consumer behavior change experience that 87% of users said changed their lives. Along with my data visualization and reporting work, these features helped secure a 95% retention rate among existing customers.</p>
                 </div>
                 <div className="flex flex-col">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                         <div className="w-1 lg:w-2 h-6 lg:h-8 bg-white -skew-x-[13deg]"></div>
                         <div className="font-extrabold uppercase">Buildium</div>
                     </div>
                     <p className="mt-4 leading-relaxed font-semibold">I designed a pricing page that increased yearly plan signups from 12% to 31%. I created an onboarding UX that reduced new customer churn from 30% to 18%. My work helped drive financial growth that led to a successful exit for the founders, investors, and employees.</p>
                 </div>
                 <div className="flex flex-col">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                         <div className="w-1 lg:w-2 h-6 lg:h-8 bg-white -skew-x-[13deg]"></div>
                         <div className="font-extrabold uppercase">Arnold</div>
                     </div>
