@@ -6,9 +6,16 @@ import React, { useEffect, useState, useRef } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
-function NewsletterSignup({ title, description, formId, linkText }) {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const formContainerRef = useRef(null);
+interface NewsletterSignupProps {
+    title: string;
+    description: string;
+    formId: string;
+    linkText: string;
+  }
+  
+  function NewsletterSignup({ title, description, formId, linkText }: NewsletterSignupProps) {
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const formContainerRef = useRef<HTMLDivElement>(null);
   
     useEffect(() => {
       if (isModalOpen && formContainerRef.current) {
@@ -39,7 +46,7 @@ function NewsletterSignup({ title, description, formId, linkText }) {
           {description}{' '}
           <a 
             href="#"
-            onClick={(e) => {
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
               e.preventDefault();
               setIsModalOpen(true);
             }}
@@ -52,15 +59,19 @@ function NewsletterSignup({ title, description, formId, linkText }) {
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
             <div className="bg-white rounded-lg px-6 pb-6 max-w-md w-full">
-                <div className="flex w-full justify-end">
-                    <button 
-                        onClick={() => setIsModalOpen(false)}
-                        className="mt-4 -mr-4 mb-4 px-4 py-2 focus:outline-none text-black"
-                        >
-                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
-                    </button>
-                </div>
-                <div ref={formContainerRef}></div>
+              <div className="flex w-full justify-end">
+                <button 
+                  onClick={() => setIsModalOpen(false)}
+                  className="mt-4 -mr-4 mb-4 px-4 py-2 focus:outline-none text-black"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div ref={formContainerRef}></div>
             </div>
           </div>
         )}
