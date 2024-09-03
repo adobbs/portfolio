@@ -13,71 +13,71 @@ interface NewsletterSignupProps {
     linkText: string;
   }
   
-  function NewsletterSignup({ title, description, formId, linkText }: NewsletterSignupProps) {
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    const formContainerRef = useRef<HTMLDivElement>(null);
-  
-    useEffect(() => {
-      if (isModalOpen && formContainerRef.current) {
-        const script = document.createElement('script');
-        script.src = `https://adobbs.ck.page/${formId}/index.js`;
-        script.async = true;
-        script.setAttribute('data-uid', formId);
-        
-        formContainerRef.current.innerHTML = '';
-        formContainerRef.current.appendChild(script);
-  
-        return () => {
-          if (formContainerRef.current) {
-            formContainerRef.current.innerHTML = '';
-          }
-        };
-      }
-    }, [isModalOpen, formId]);
-  
-    return (
-      <div className="flex flex-col">
-        <div className="flex items-center gap-3">
-          <div className="w-1.5 lg:w-2 h-4 sm:h-5 lg:h-7 bg-white -skew-x-[13deg]"></div>
-          <div className="font-extrabold uppercase">{title}</div>
-          <div className="w-1.5 lg:w-2 h-4 sm:h-5 lg:h-7 bg-white -skew-x-[13deg]"></div>
-        </div>
-        <p className="mt-4 leading-relaxed font-semibold">
-          {description}{' '}
-          <a 
-            href="#"
-            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-              e.preventDefault();
-              setIsModalOpen(true);
-            }}
-            className="underline cursor-pointer"
-          >
-            {linkText}
-          </a>.
-        </p>
-  
-        {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-lg px-6 pb-6 max-w-md w-full">
-              <div className="flex w-full justify-end">
-                <button 
-                  onClick={() => setIsModalOpen(false)}
-                  className="mt-4 -mr-4 mb-4 px-4 py-2 focus:outline-none text-black"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-x">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M18 6l-12 12" />
-                    <path d="M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              <div ref={formContainerRef}></div>
-            </div>
-          </div>
-        )}
+function NewsletterSignup({ title, description, formId, linkText }: NewsletterSignupProps) {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const formContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isModalOpen && formContainerRef.current) {
+      const script = document.createElement('script');
+      script.src = `https://adobbs.ck.page/${formId}/index.js`;
+      script.async = true;
+      script.setAttribute('data-uid', formId);
+      
+      formContainerRef.current.innerHTML = '';
+      formContainerRef.current.appendChild(script);
+
+      return () => {
+        if (formContainerRef.current) {
+          formContainerRef.current.innerHTML = '';
+        }
+      };
+    }
+  }, [isModalOpen, formId]);
+
+  return (
+    <div className="flex flex-col">
+      <div className="flex items-center gap-3">
+        <div className="w-1.5 lg:w-2 h-4 sm:h-5 lg:h-7 bg-white -skew-x-[13deg]"></div>
+        <div className="font-extrabold uppercase">{title}</div>
+        <div className="w-1.5 lg:w-2 h-4 sm:h-5 lg:h-7 bg-white -skew-x-[13deg]"></div>
       </div>
-    );
-  }
+      <p className="mt-4 leading-relaxed font-semibold">
+        {description}{' '}
+        <a 
+          href="#"
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+            e.preventDefault();
+            setIsModalOpen(true);
+          }}
+          className="underline cursor-pointer"
+        >
+          {linkText}
+        </a>.
+      </p>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg px-6 pb-6 max-w-md w-full">
+            <div className="flex w-full justify-end">
+              <button 
+                onClick={() => setIsModalOpen(false)}
+                className="mt-4 -mr-4 mb-4 px-4 py-2 focus:outline-none text-black"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M18 6l-12 12" />
+                  <path d="M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div ref={formContainerRef}></div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -123,18 +123,24 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col gap-12 lg:gap-16 lg:mt-16 text-sm sm:text-base lg:text-2xl">
                         <NewsletterSignup
-                            title="The Fairweather Series"
-                            description="The next must-read epic fantasy. Take flight with the"
-                            formId="0dba5570c8"
-                            linkText="Fairweather newsletter"
-                        />
-                        <NewsletterSignup
                             title="8x800 Athletics"
                             description="We are all athletes. Lace up and run toward better health with the"
                             formId="0c29f2e34c"
                             linkText="8x800 newsletter"
                         />
-                        </div>
+                        <NewsletterSignup
+                            title="Fairweather Series"
+                            description="The next must-read epic fantasy. Take flight with the"
+                            formId="0dba5570c8"
+                            linkText="Fairweather newsletter"
+                        />
+                        <NewsletterSignup
+                            title="The Gift"
+                            description="Follow my recovery from PTSD and learn about aphantasia in the"
+                            formId="9657823810"
+                            linkText="Gift newsletter"
+                        />
+                      </div>
                 </div>
             </main>
             <footer className="mt-12 lg:mt-32 mb-4 lg:mb-16">
