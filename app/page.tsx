@@ -130,15 +130,9 @@ export default function Home() {
                         />
                         <NewsletterSignup
                             title="Fairweather Series"
-                            description="The next must-read epic fantasy. Take flight with the"
+                            description="The next must-read fantasy adventure. Take flight with the"
                             formId="0dba5570c8"
                             linkText="Fairweather newsletter"
-                        />
-                        <NewsletterSignup
-                            title="The Gift"
-                            description="Follow my recovery from PTSD and learn about aphantasia in the"
-                            formId="9657823810"
-                            linkText="Gift newsletter"
                         />
                       </div>
                 </div>
