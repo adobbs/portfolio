@@ -275,6 +275,45 @@
             .animation-container {
                 display: none;
             }
+            
+            /* Remove hover effects on mobile */
+            .link:hover {
+                border-color: #e9ecef;
+                background: #ffffff;
+                transform: none;
+                box-shadow: none;
+            }
+            
+            .project-card:hover {
+                border-color: #e9ecef;
+                transform: none;
+                box-shadow: none;
+            }
+            
+            .project-button:hover {
+                background: #0f766e;
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 768px) and (prefers-color-scheme: dark) {
+            .link:hover {
+                border-color: #3f3f46;
+                background: #1a1a1a;
+                transform: none;
+                box-shadow: none;
+            }
+            
+            .project-card:hover {
+                border-color: #3f3f46;
+                transform: none;
+                box-shadow: none;
+            }
+            
+            .project-button:hover {
+                background: #0f766e;
+                transform: none;
+            }
         }
 
         /* Background Animation Container */
