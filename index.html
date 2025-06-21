@@ -79,7 +79,7 @@
             font-size: 1rem;
             color: #34495e;
             max-width: 600px;
-            margin: 0 auto 2rem;
+            margin: 0 auto;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -110,9 +110,10 @@
         }
 
         .link:hover {
-            border-color: #3498db;
-            color: #3498db;
+            border-color: #0f766e;
             background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -123,15 +124,115 @@
             }
             
             .link:hover {
-                border-color: #60a5fa;
-                color: #60a5fa;
+                border-color: #0f766e;
                 background: #111111;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
             }
         }
 
         .link svg {
             width: 18px;
             height: 18px;
+            fill: currentColor;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 0 0 3rem 0;
+            max-width: 100%;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            border-color: #0f766e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .project-card {
+                background: #1a1a1a;
+                border-color: #3f3f46;
+            }
+            
+            .project-card:hover {
+                border-color: #0f766e;
+                box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
+            }
+        }
+
+        .project-header {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.75rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .project-header {
+                color: #f8f9fa;
+            }
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .project-description {
+                color: #a1a1aa;
+            }
+        }
+
+        .project-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            background: #0f766e;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            align-self: flex-end;
+            margin-top: auto;
+        }
+
+        .project-button:hover {
+            background: #0a5d56;
+            transform: translateY(-1px);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .project-button {
+                background: #0f766e;
+            }
+            
+            .project-button:hover {
+                background: #0a5d56;
+            }
+        }
+
+        .project-button svg {
+            width: 16px;
+            height: 16px;
             fill: currentColor;
         }
 
@@ -146,6 +247,12 @@
             
             .title {
                 font-size: 1.1rem;
+            }
+            
+            .projects {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin: 2rem 0;
             }
             
             .links {
@@ -168,6 +275,23 @@
             <p class="description">
               Transforms outcomes with elegant systems, including 23% annual contract value growth and doubling NPS in less than a year.
             </p>
+        </div>
+
+        <div class="projects">
+            <div class="project-card">
+                <div class="project-header">Design Token System</div>
+                <div class="project-description">A FastAPI-based design token management system with real-time updates and multi-platform builds.</div>
+                <a href="https://github.com/adobbs/design-token-system" class="project-button" target="_blank">
+                    View Project
+                </a>
+            </div>
+            <div class="project-card">
+              <div class="project-header">Analytics Dashboard</div>
+              <div class="project-description">A product design case study for a data-rich dashboard work that leveled up operations at health systems.</div>
+              <a href="https://www.figma.com/board/20iz9gieqNfdauU6FoOUFs/Analytics-Dashboard-Case-Study?node-id=0-1&t=xdYj2b0rDAXR1hhJ-1" class="project-button" target="_blank">
+                  View Project
+              </a>
+          </div>
         </div>
 
         <div class="links">
