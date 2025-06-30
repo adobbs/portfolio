@@ -25,18 +25,12 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: #fafafa;
-            color: #1a1a1a;
+            background: #0a0a0a;
+            color: #e8e8e8;
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: #0a0a0a;
-                color: #e8e8e8;
-            }
-        }
 
         .container {
             position: relative;
@@ -60,41 +54,26 @@
             font-size: 2.5rem;
             font-weight: 600;
             margin-bottom: 0.1rem;
-            color: #1a1a1a;
+            color: #e8e8e8;
         }
 
-        @media (prefers-color-scheme: dark) {
-            h1 {
-                color: #e8e8e8;
-            }
-        }
 
         .title {
             font-family: 'Lora', serif;
             font-size: 1.3rem;
-            color: #666666;
+            color: #b0b0b0;
             font-weight: 400;
             margin-bottom: 2rem;
         }
 
-        @media (prefers-color-scheme: dark) {
-            .title {
-                color: #b0b0b0;
-            }
-        }
 
         .description {
             font-size: 1.1rem;
-            color: #333333;
+            color: #cccccc;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        @media (prefers-color-scheme: dark) {
-            .description {
-                color: #cccccc;
-            }
-        }
 
         .links {
             display: flex;
@@ -108,36 +87,22 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.75rem 1.5rem;
-            background: #ffffff;
-            border: 1px solid #e9ecef;
+            background: #1a1a1a;
+            border: 1px solid #3f3f46;
             border-radius: 6px;
             text-decoration: none;
-            color: #2c3e50;
+            color: #e4e4e7;
             font-weight: 500;
             transition: all 0.2s ease;
         }
 
         .link:hover {
             border-color: #0f766e;
-            background: #f8fafa;
+            background: #111312;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
         }
 
-        @media (prefers-color-scheme: dark) {
-            .link {
-                background: #1a1a1a;
-                border-color: #3f3f46;
-                color: #e4e4e7;
-            }
-            
-            .link:hover {
-                border-color: #0f766e;
-                background: #111312;
-                transform: translateY(-2px);
-                box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
-            }
-        }
 
         .link svg {
             width: 18px;
@@ -154,8 +119,8 @@
         }
 
         .project-card {
-            background: #ffffff;
-            border: 1px solid #e9ecef;
+            background: #1a1a1a;
+            border: 1px solid #3f3f46;
             border-radius: 8px;
             padding: 1.5rem;
             transition: all 0.2s ease;
@@ -166,47 +131,26 @@
         .project-card:hover {
             border-color: #0f766e;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
         }
 
-        @media (prefers-color-scheme: dark) {
-            .project-card {
-                background: #1a1a1a;
-                border-color: #3f3f46;
-            }
-            
-            .project-card:hover {
-                border-color: #0f766e;
-                box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
-            }
-        }
 
         .project-header {
             font-family: 'Lora', serif;
             font-size: 1.25rem;
             font-weight: 600;
-            color: #2c3e50;
+            color: #f8f9fa;
             margin-bottom: 0.75rem;
         }
 
-        @media (prefers-color-scheme: dark) {
-            .project-header {
-                color: #f8f9fa;
-            }
-        }
 
         .project-description {
             font-size: 0.95rem;
-            color: #666666;
+            color: #999999;
             margin-bottom: 1.5rem;
             line-height: 1.5;
         }
 
-        @media (prefers-color-scheme: dark) {
-            .project-description {
-                color: #999999;
-            }
-        }
 
         .project-button {
             display: flex;
@@ -230,15 +174,6 @@
             transform: translateY(-1px);
         }
 
-        @media (prefers-color-scheme: dark) {
-            .project-button {
-                background: #0f766e;
-            }
-            
-            .project-button:hover {
-                background: #0a5d56;
-            }
-        }
 
         .project-button svg {
             width: 16px;
@@ -284,27 +219,12 @@
                 display: none;
             }
             
+            /* Hide gradient on mobile */
+            .gradient-background {
+                display: none;
+            }
+            
             /* Remove hover effects on mobile */
-            .link:hover {
-                border-color: #e9ecef;
-                background: #ffffff;
-                transform: none;
-                box-shadow: none;
-            }
-            
-            .project-card:hover {
-                border-color: #e9ecef;
-                transform: none;
-                box-shadow: none;
-            }
-            
-            .project-button:hover {
-                background: #0f766e;
-                transform: none;
-            }
-        }
-        
-        @media (max-width: 768px) and (prefers-color-scheme: dark) {
             .link:hover {
                 border-color: #3f3f46;
                 background: #1a1a1a;
@@ -323,6 +243,7 @@
                 transform: none;
             }
         }
+        
 
         /* Background Animation Container */
         .animation-container {
@@ -336,12 +257,25 @@
             pointer-events: none;
         }
 
+        /* Bottom Gradient Background */
+        .gradient-background {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40vh;
+            z-index: 5;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(15, 118, 110, 0.18) 0%, rgba(15, 118, 110, 0.09) 50%, transparent 100%);
+        }
+
+
         /* Animated Dots */
         .thinking-dot {
             position: absolute;
             width: 3px;
             height: 3px;
-            background: rgba(20, 20, 20, 0.4);
+            background: rgba(235, 235, 235, 0.6);
             border-radius: 50%;
             animation: float 4s ease-in-out;
             /* Prevent initial flash at top by starting with animation's 0% state */
@@ -349,11 +283,6 @@
             opacity: 0;
         }
 
-        @media (prefers-color-scheme: dark) {
-            .thinking-dot {
-                background: rgba(235, 235, 235, 0.6);
-            }
-        }
 
         /* Floating animation with random delays and directions */
         @keyframes float {
@@ -386,6 +315,7 @@
 </head>
 <body>
     <div id="animationContainer" class="animation-container"></div>
+    <div class="gradient-background"></div>
     <div class="container">
         <div class="header">
             <h1>Andy Dobbs</h1>
