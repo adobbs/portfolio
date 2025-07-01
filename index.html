@@ -11,7 +11,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Audiowide&display=swap" rel="stylesheet">
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
@@ -50,17 +50,17 @@
         }
 
         h1 {
-            font-family: 'Lora', serif;
+            font-family: 'Audiowide', sans-serif;
             font-size: 2.5rem;
-            font-weight: 600;
+            font-weight: 400;
             margin-bottom: 0.1rem;
             color: #e8e8e8;
         }
 
 
         .title {
-            font-family: 'Lora', serif;
-            font-size: 1.3rem;
+            font-family: 'Audiowide', sans-serif;
+            font-size: 1.5rem;
             color: #b0b0b0;
             font-weight: 400;
             margin-bottom: 2rem;
@@ -88,16 +88,14 @@
             gap: 0.5rem;
             padding: 0.75rem 1.5rem;
             background: #1a1a1a;
-            border: 1px solid #3f3f46;
-            border-radius: 6px;
             text-decoration: none;
             color: #e4e4e7;
             font-weight: 500;
             transition: all 0.2s ease;
+            clip-path: polygon(16px 0%, 100% 0%, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0% 100%, 0% 16px);
         }
 
         .link:hover {
-            border-color: #0f766e;
             background: #111312;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
@@ -119,26 +117,24 @@
         }
 
         .project-card {
-            background: #1a1a1a;
-            border: 1px solid #3f3f46;
-            border-radius: 8px;
+            background: rgba(26, 26, 26, 0.85);
             padding: 1.5rem;
             transition: all 0.2s ease;
             display: flex;
             flex-direction: column;
+            clip-path: polygon(20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%, 0% 20px);
         }
 
         .project-card:hover {
-            border-color: #0f766e;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
         }
 
 
         .project-header {
-            font-family: 'Lora', serif;
+            font-family: 'Audiowide', sans-serif;
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 400;
             color: #f8f9fa;
             margin-bottom: 0.75rem;
         }
@@ -146,7 +142,7 @@
 
         .project-description {
             font-size: 0.95rem;
-            color: #999999;
+            color: #b8b8b8;
             margin-bottom: 1.5rem;
             line-height: 1.5;
         }
@@ -226,14 +222,12 @@
             
             /* Remove hover effects on mobile */
             .link:hover {
-                border-color: #3f3f46;
                 background: #1a1a1a;
                 transform: none;
                 box-shadow: none;
             }
             
             .project-card:hover {
-                border-color: #3f3f46;
                 transform: none;
                 box-shadow: none;
             }
