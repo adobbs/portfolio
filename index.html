@@ -482,5 +482,95 @@
   window.addEventListener('resize', () => {
       thinkingAnim.createParticles();
   });
+
+  // Custom Event Tracking
+  function initializeEventTracking() {
+    // Track project button clicks
+    const projectButtons = document.querySelectorAll('.project-button');
+    projectButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        const projectCard = button.closest('.project-card');
+        const projectName = projectCard.querySelector('.project-header').textContent;
+        const buttonText = button.textContent.trim();
+        
+        window.va('track', 'project_click', {
+          project: projectName,
+          button_type: buttonText,
+          position: index + 1
+        });
+      });
+    });
+
+    // Track social link clicks
+    const socialLinks = document.querySelectorAll('.links .link');
+    socialLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const linkText = link.textContent.trim();
+        const platform = linkText.toLowerCase();
+        
+        window.va('track', 'social_visit', {
+          platform: platform,
+          destination: link.href
+        });
+      });
+    });
+
+    // Track project card engagement (hover interactions)
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+      let hoverStartTime = null;
+      
+      card.addEventListener('mouseenter', () => {
+        hoverStartTime = Date.now();
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        if (hoverStartTime) {
+          const hoverDuration = Date.now() - hoverStartTime;
+          const projectName = card.querySelector('.project-header').textContent;
+          
+          // Only track meaningful hover interactions (>1 second)
+          if (hoverDuration > 1000) {
+            window.va('track', 'project_hover', {
+              project: projectName,
+              duration_ms: hoverDuration,
+              position: index + 1
+            });
+          }
+          hoverStartTime = null;
+        }
+      });
+    });
+  }
+
+  // Track page engagement duration
+  let pageLoadTime = Date.now();
+  let engagementTracked = false;
+  
+  function trackPageEngagement() {
+    if (engagementTracked) return;
+    
+    const timeOnPage = Date.now() - pageLoadTime;
+    
+    // Track meaningful engagement (>30 seconds)
+    if (timeOnPage > 30000) {
+      window.va('track', 'page_engagement', {
+        duration_ms: timeOnPage,
+        engagement_level: timeOnPage > 120000 ? 'high' : 'medium'
+      });
+      engagementTracked = true;
+    }
+  }
+  
+  // Track engagement on page unload or after significant time
+  window.addEventListener('beforeunload', trackPageEngagement);
+  setTimeout(trackPageEngagement, 60000); // Check after 1 minute
+
+  // Initialize event tracking when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeEventTracking);
+  } else {
+    initializeEventTracking();
+  }
 </script>
 </html>
