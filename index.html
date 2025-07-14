@@ -221,6 +221,11 @@
                 display: none;
             }
             
+            /* Hide space elements on mobile */
+            .star-field {
+                display: none;
+            }
+            
             /* Remove hover effects on mobile */
             .link:hover {
                 background: #1a1a1a;
@@ -252,6 +257,33 @@
             pointer-events: none;
         }
 
+        /* Static Star Field */
+        .star-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+
+        .star.bright {
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.25);
+        }
+
+
         /* Bottom Gradient Background */
         .gradient-background {
             position: fixed;
@@ -259,50 +291,68 @@
             left: 0;
             width: 100%;
             height: 40vh;
-            z-index: 5;
+            z-index: 8;
             pointer-events: none;
             background: linear-gradient(to top, rgba(13, 122, 95, 0.18) 0%, rgba(13, 122, 95, 0.09) 50%, transparent 100%);
         }
 
 
-        /* Animated Dots */
-        .thinking-dot {
+        /* Animated Spacecraft */
+        .spacecraft {
             position: absolute;
-            width: 3px;
-            height: 3px;
-            background: rgba(220, 235, 225, 0.6);
-            border-radius: 50%;
-            animation: float 4s ease-in-out;
+            width: 4px;
+            height: 14px;
+            background: linear-gradient(to top, rgba(13, 122, 95, 0.9) 0%, rgba(200, 255, 220, 0.8) 40%, rgba(255, 255, 255, 0.9) 100%);
+            border-radius: 8px 8px 2px 2px;
+            animation: float 6s ease-in-out;
             /* Prevent initial flash at top by starting with animation's 0% state */
             transform: translateY(105vh) translateX(0) scale(0.5);
             opacity: 0;
+            box-shadow: 0 0 4px rgba(13, 122, 95, 0.6), 0 -2px 8px rgba(13, 122, 95, 0.4);
+        }
+        
+        .spacecraft::before {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 6px;
+            background: rgba(13, 122, 95, 0.8);
+            border-radius: 1px;
+            box-shadow: 0 0 6px rgba(13, 122, 95, 0.6);
         }
 
 
-        /* Floating animation with random delays and directions */
+        /* Spacecraft flight animation */
         @keyframes float {
             0% {
-                transform: translateY(105vh) translateX(0) scale(0.5);
+                transform: translateY(105vh) translateX(0) scale(0.3) rotate(0deg);
                 opacity: 0;
             }
-            25% {
-                opacity: 0.6;
-                transform: translateY(75vh) translateX(10px) scale(1);
+            15% {
+                opacity: 0.8;
+                transform: translateY(85vh) translateX(20px) scale(0.8) rotate(2deg);
             }
-            50% {
+            35% {
                 opacity: 1;
-                transform: translateY(50vh) translateX(-20px) scale(1.4);
+                transform: translateY(65vh) translateX(-10px) scale(1) rotate(-1deg);
+            }
+            55% {
+                opacity: 1;
+                transform: translateY(45vh) translateX(30px) scale(1.1) rotate(3deg);
             }
             75% {
-                opacity: 0.6;
-                transform: translateY(25vh) translateX(15px) scale(1);
+                opacity: 0.9;
+                transform: translateY(25vh) translateX(-5px) scale(0.9) rotate(-2deg);
             }
             90% {
-                opacity: 0;
-                transform: translateY(8vh) translateX(30px) scale(0.5);
+                opacity: 0.3;
+                transform: translateY(10vh) translateX(15px) scale(0.6) rotate(1deg);
             }
             100% {
-                transform: translateY(-20vh) translateX(0) scale(0);
+                transform: translateY(-15vh) translateX(0) scale(0.2) rotate(0deg);
                 opacity: 0;
             }
         }
@@ -310,6 +360,7 @@
 </head>
 <body>
     <div id="animationContainer" class="animation-container"></div>
+    <div class="star-field" id="starField"></div>
     <div class="gradient-background"></div>
     <div class="container">
         <div class="header">
@@ -373,10 +424,10 @@
       createPool() {
           // Pre-create DOM elements for reuse
           for (let i = 0; i < this.size; i++) {
-              const particle = document.createElement('div');
-              particle.className = 'thinking-dot';
-              particle.style.display = 'none'; // Hidden by default
-              this.pool.push(particle);
+              const spacecraft = document.createElement('div');
+              spacecraft.className = 'spacecraft';
+              spacecraft.style.display = 'none'; // Hidden by default
+              this.pool.push(spacecraft);
           }
       }
       
@@ -389,16 +440,16 @@
           }
           
           // Fallback: create new if pool is empty
-          const particle = document.createElement('div');
-          particle.className = 'thinking-dot';
-          this.activeParticles.add(particle);
+          const spacecraft = document.createElement('div');
+          spacecraft.className = 'spacecraft';
+          this.activeParticles.add(spacecraft);
           
           // Track fallback creation
           if (window.perfMonitor) {
               window.perfMonitor.trackDOMCreation();
           }
           
-          return particle;
+          return spacecraft;
       }
       
       release(particle) {
@@ -439,9 +490,9 @@
           this.isActive = true;
           this.intensity = 'low';
           this.speed = 1;
-          this.density = 40;
+          this.density = 4;
           this.particles = [];
-          this.particlePool = new ParticlePool(100);
+          this.particlePool = new ParticlePool(20);
           
           this.init();
       }
@@ -458,7 +509,7 @@
           const particleCount = this.density;
           
           for (let i = 0; i < particleCount; i++) {
-              this.createParticle('thinking-dot', i * 50);
+              this.createParticle('spacecraft', i * 100);
           }
 
 
@@ -467,24 +518,25 @@
       }
 
       createParticle(className, delay) {
-          const particle = this.particlePool.acquire();
+          const spacecraft = this.particlePool.acquire();
+          spacecraft.className = className;
           
           // Random starting position
           const startX = Math.random() * window.innerWidth;
-          particle.style.left = startX + 'px';
+          spacecraft.style.left = startX + 'px';
           
           // Random animation delay
-          const animationDelay = delay + Math.random() * 2000;
-          const animationDuration = 4000 / this.speed;
-          particle.style.animationDelay = animationDelay + 'ms';
-          particle.style.animationDuration = animationDuration + 'ms';
+          const animationDelay = delay + Math.random() * 4000;
+          const animationDuration = 6000 / this.speed;
+          spacecraft.style.animationDelay = animationDelay + 'ms';
+          spacecraft.style.animationDuration = animationDuration + 'ms';
           
           // Store creation time and duration for cleanup
-          particle._createdAt = Date.now();
-          particle._totalDuration = animationDelay + animationDuration;
+          spacecraft._createdAt = Date.now();
+          spacecraft._totalDuration = animationDelay + animationDuration;
           
-          this.container.appendChild(particle);
-          this.particles.push(particle);
+          this.container.appendChild(spacecraft);
+          this.particles.push(spacecraft);
       }
       
       releaseParticle(particle) {
@@ -505,9 +557,9 @@
       setIntensity(level) {
           this.intensity = level;
           const intensityMap = {
-              'low': 40,
-              'medium': 80,
-              'high': 150
+              'low': 4,
+              'medium': 8,
+              'high': 12
           };
           this.density = intensityMap[level];
           this.createParticles();
@@ -543,10 +595,10 @@
 
       animate() {
           if (this.isActive) {
-              // Continuously create new particles with proper spacing
-              if (Math.random() < 0.2) {  // Quadrupled frequency for many more particles
-                  const randomDelay = Math.random() * 2000;  // Random delay up to 2 seconds
-                  this.createParticle('thinking-dot', randomDelay);
+              // Continuously create new spacecraft with proper spacing
+              if (Math.random() < 0.01) {  // Even lower frequency for fewer spacecraft
+                  const randomDelay = Math.random() * 4000;  // Random delay up to 4 seconds
+                  this.createParticle('spacecraft', randomDelay);
               }
               
               // Clean up old particles
@@ -634,6 +686,30 @@
   
   // Initialize animation
   const thinkingAnim = new ThinkingAnimation();
+  
+  // Create static star field
+  function createStarField() {
+    const starField = document.getElementById('starField');
+    const starCount = 300;
+    
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = Math.random() < 0.3 ? 'star bright' : 'star';
+      
+      // Random position - top 2/3 of viewport
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 66.67 + '%';
+      
+      // Slight random opacity variation
+      const opacity = Math.random() < 0.3 ? 0.65 : 0.4;
+      star.style.opacity = opacity + (Math.random() * 0.1 - 0.05);
+      
+      starField.appendChild(star);
+    }
+  }
+  
+  // Initialize star field
+  createStarField();
   
   // Add console command to get pool stats
   window.getPoolStats = () => {

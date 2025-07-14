@@ -5,7 +5,7 @@ A futuristic personal portfolio website featuring a sci-fi aesthetic with animat
 ## ✨ Features
 
 - **Sci-Fi Design**: Dark theme with retro-futuristic Audiowide typography
-- **Animated Background**: Floating particles with subtle green tint
+- **Space Theme**: Starfield with spacecraft launching from planetary surface
 - **Corner Cuts**: BSG-style diagonal cuts on all interactive elements
 - **Responsive**: Mobile-optimized with performance considerations
 - **Zero Dependencies**: Pure HTML, CSS, and JavaScript
@@ -15,7 +15,8 @@ A futuristic personal portfolio website featuring a sci-fi aesthetic with animat
 ### Visual Elements
 - **Corner cuts** using CSS `clip-path` on cards, links, and buttons
 - **Gradient background** transitioning from black to dark green
-- **Floating dots animation** with performance optimization
+- **Starfield** with 200 static stars in upper 2/3 of viewport
+- **Animated spacecraft** launching from planetary surface with engine trails
 - **Semi-transparent backgrounds** for depth and layering
 
 ### Typography
@@ -68,15 +69,16 @@ Key CSS variables and values:
 - Animation density: Controlled in JavaScript `ThinkingAnimation` class
 
 ### Animation Controls
-The floating dots animation can be customized via the JavaScript class:
-- `density`: Number of particles
+The spacecraft animation can be customized via the JavaScript class:
+- `density`: Number of spacecraft (default: 4)
 - `speed`: Animation speed multiplier
-- `intensity`: Particle frequency
+- `intensity`: Spacecraft spawn frequency
+- Object pooling system for performance optimization
 
 ## 📱 Mobile Experience
 
 - Hover effects disabled on touch devices
-- Background animations hidden for performance
+- Starfield and spacecraft animations hidden for performance
 - Single-column layout with optimized spacing
 - Maintains visual hierarchy and accessibility
 
@@ -84,7 +86,8 @@ The floating dots animation can be customized via the JavaScript class:
 
 - Lightweight: No external frameworks or libraries
 - Optimized animations with `requestAnimationFrame`
-- Efficient particle cleanup and memory management
+- Object pooling system for spacecraft with efficient cleanup
+- Static starfield for minimal performance impact
 - Mobile-optimized with reduced visual effects
 
 ---
