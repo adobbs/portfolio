@@ -136,7 +136,7 @@
         .project-header {
             font-family: 'Poppins', sans-serif;
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 500;
             color: #f8f9fa;
             margin-bottom: 0.75rem;
         }
@@ -578,7 +578,7 @@
         
         if (frameDuration > 16.67) { // Slower than 60fps
           this.metrics.frameDrops++;
-          console.warn(`Slow frame: ${frameDuration.toFixed(2)}ms`);
+          // console.warn(`Slow frame: ${frameDuration.toFixed(2)}ms`);
         }
         
         this.metrics.lastFrameTime = now;
@@ -591,7 +591,7 @@
         if (performance.memory) {
           const memoryMB = Math.round(performance.memory.usedJSHeapSize / 1048576);
           this.metrics.memoryUsage.push(memoryMB);
-          console.log(`Memory usage: ${memoryMB}MB`);
+          // console.log(`Memory usage: ${memoryMB}MB`);
         }
       }, 5000);
       
@@ -599,7 +599,7 @@
       document.addEventListener('click', (e) => {
         const responseTime = performance.now() - e.timeStamp;
         this.metrics.clickResponseTimes.push(responseTime);
-        console.log(`Click response time: ${responseTime.toFixed(2)}ms`);
+        // console.log(`Click response time: ${responseTime.toFixed(2)}ms`);
       });
     }
     
