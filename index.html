@@ -362,6 +362,77 @@
     </div>
 </body>
 <script>
+  class ParticlePool {
+      constructor(size = 100) {
+          this.pool = [];
+          this.activeParticles = new Set();
+          this.size = size;
+          this.createPool();
+      }
+      
+      createPool() {
+          // Pre-create DOM elements for reuse
+          for (let i = 0; i < this.size; i++) {
+              const particle = document.createElement('div');
+              particle.className = 'thinking-dot';
+              particle.style.display = 'none'; // Hidden by default
+              this.pool.push(particle);
+          }
+      }
+      
+      acquire() {
+          if (this.pool.length > 0) {
+              const particle = this.pool.pop();
+              this.activeParticles.add(particle);
+              particle.style.display = 'block';
+              return particle;
+          }
+          
+          // Fallback: create new if pool is empty
+          const particle = document.createElement('div');
+          particle.className = 'thinking-dot';
+          this.activeParticles.add(particle);
+          
+          // Track fallback creation
+          if (window.perfMonitor) {
+              window.perfMonitor.trackDOMCreation();
+          }
+          
+          return particle;
+      }
+      
+      release(particle) {
+          if (this.activeParticles.has(particle)) {
+              this.activeParticles.delete(particle);
+              particle.style.display = 'none';
+              
+              // Reset particle properties
+              particle.style.animationDelay = '';
+              particle.style.animationDuration = '';
+              particle._createdAt = null;
+              particle._totalDuration = null;
+              
+              // Return to pool if there's space
+              if (this.pool.length < this.size) {
+                  this.pool.push(particle);
+              } else {
+                  // Remove excess particles
+                  if (particle.parentNode) {
+                      particle.parentNode.removeChild(particle);
+                  }
+              }
+          }
+      }
+      
+      getStats() {
+          return {
+              poolSize: this.pool.length,
+              activeParticles: this.activeParticles.size,
+              totalCapacity: this.size
+          };
+      }
+  }
+
   class ThinkingAnimation {
       constructor() {
           this.container = document.getElementById('animationContainer');
@@ -370,6 +441,7 @@
           this.speed = 1;
           this.density = 40;
           this.particles = [];
+          this.particlePool = new ParticlePool(100);
           
           this.init();
       }
@@ -395,8 +467,7 @@
       }
 
       createParticle(className, delay) {
-          const particle = document.createElement('div');
-          particle.className = className;
+          const particle = this.particlePool.acquire();
           
           // Random starting position
           const startX = Math.random() * window.innerWidth;
@@ -414,6 +485,16 @@
           
           this.container.appendChild(particle);
           this.particles.push(particle);
+      }
+      
+      releaseParticle(particle) {
+          // Remove from DOM
+          if (particle.parentNode) {
+              particle.parentNode.removeChild(particle);
+          }
+          
+          // Return to pool
+          this.particlePool.release(particle);
       }
       
       toggle() {
@@ -446,7 +527,7 @@
           // Remove particles that have completed their animation based on time
           this.particles = this.particles.filter(particle => {
               if (particle.parentNode && this.isParticleFinished(particle)) {
-                  particle.remove();
+                  this.releaseParticle(particle);
                   return false;
               }
               return particle.parentNode; // Keep particles that are still in DOM
@@ -475,8 +556,91 @@
       }
   }
 
+  // Performance monitoring for testing
+  class PerformanceMonitor {
+    constructor() {
+      this.metrics = {
+        domCreations: 0,
+        frameDrops: 0,
+        memoryUsage: [],
+        clickResponseTimes: [],
+        lastFrameTime: performance.now()
+      };
+      
+      this.startMonitoring();
+    }
+    
+    startMonitoring() {
+      // Monitor frame timing
+      const measureFrame = () => {
+        const now = performance.now();
+        const frameDuration = now - this.metrics.lastFrameTime;
+        
+        if (frameDuration > 16.67) { // Slower than 60fps
+          this.metrics.frameDrops++;
+          console.warn(`Slow frame: ${frameDuration.toFixed(2)}ms`);
+        }
+        
+        this.metrics.lastFrameTime = now;
+        requestAnimationFrame(measureFrame);
+      };
+      requestAnimationFrame(measureFrame);
+      
+      // Monitor memory every 5 seconds
+      setInterval(() => {
+        if (performance.memory) {
+          const memoryMB = Math.round(performance.memory.usedJSHeapSize / 1048576);
+          this.metrics.memoryUsage.push(memoryMB);
+          console.log(`Memory usage: ${memoryMB}MB`);
+        }
+      }, 5000);
+      
+      // Monitor click response times
+      document.addEventListener('click', (e) => {
+        const responseTime = performance.now() - e.timeStamp;
+        this.metrics.clickResponseTimes.push(responseTime);
+        console.log(`Click response time: ${responseTime.toFixed(2)}ms`);
+      });
+    }
+    
+    trackDOMCreation() {
+      this.metrics.domCreations++;
+    }
+    
+    getReport() {
+      const avgMemory = this.metrics.memoryUsage.reduce((a, b) => a + b, 0) / this.metrics.memoryUsage.length;
+      const avgClickTime = this.metrics.clickResponseTimes.reduce((a, b) => a + b, 0) / this.metrics.clickResponseTimes.length;
+      
+      return {
+        domCreations: this.metrics.domCreations,
+        frameDrops: this.metrics.frameDrops,
+        avgMemoryMB: Math.round(avgMemory),
+        avgClickResponseMs: Math.round(avgClickTime),
+        totalClicks: this.metrics.clickResponseTimes.length
+      };
+    }
+  }
+  
+  // Initialize performance monitoring
+  const perfMonitor = new PerformanceMonitor();
+  window.perfMonitor = perfMonitor; // Make globally accessible
+  
+  // Add console command to get performance report
+  window.getPerformanceReport = () => {
+    const report = perfMonitor.getReport();
+    console.log('Performance Report:', report);
+    return report;
+  };
+  
   // Initialize animation
   const thinkingAnim = new ThinkingAnimation();
+  
+  // Add console command to get pool stats
+  window.getPoolStats = () => {
+    const stats = thinkingAnim.particlePool.getStats();
+    console.log('Pool Stats:', stats);
+    return stats;
+  };
 
   // Handle window resize
   window.addEventListener('resize', () => {
