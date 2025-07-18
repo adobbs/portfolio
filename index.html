@@ -482,6 +482,11 @@
           this.particles = [];
           this.particlePool = new ParticlePool(20);
           
+          // Zone-based spawning system
+          this.zoneCount = 25;
+          this.spawnZones = [];
+          this.initializeZones();
+          
           this.init();
       }
 
@@ -490,28 +495,71 @@
           this.animate();
       }
 
+      initializeZones() {
+          this.spawnZones = [];
+          for (let i = 0; i < this.zoneCount; i++) {
+              this.spawnZones.push({
+                  occupied: false,
+                  lastSpawnTime: 0
+              });
+          }
+      }
+
+      getAvailableZone() {
+          const availableZones = [];
+          for (let i = 0; i < this.spawnZones.length; i++) {
+              if (!this.spawnZones[i].occupied) {
+                  availableZones.push(i);
+              }
+          }
+          
+          if (availableZones.length === 0) {
+              return null; // No zones available
+          }
+          
+          return availableZones[Math.floor(Math.random() * availableZones.length)];
+      }
+
+      getZonePosition(zoneIndex) {
+          const zoneWidth = window.innerWidth / this.zoneCount;
+          const zoneCenter = (zoneIndex + 0.5) * zoneWidth;
+          // Add small random offset within zone for visual variety
+          const offset = (Math.random() - 0.5) * Math.min(zoneWidth * 0.6, 30);
+          return Math.max(0, Math.min(window.innerWidth - 20, zoneCenter + offset));
+      }
+
       createParticles() {
           this.container.innerHTML = '';
           this.particles = [];
+          
+          // Reset all zones when recreating particles
+          this.initializeZones();
 
           const particleCount = this.density;
           
           for (let i = 0; i < particleCount; i++) {
               this.createParticle('spacejelly', i * 100);
           }
-
-
-
-
       }
 
       createParticle(className, delay) {
+          // Get available zone for spawning
+          const zoneIndex = this.getAvailableZone();
+          if (zoneIndex === null) {
+              return; // No zones available, skip spawn
+          }
+          
           const spacejelly = this.particlePool.acquire();
           spacejelly.className = className;
           
-          // Random starting position
-          const startX = Math.random() * window.innerWidth;
+          // Zone-based positioning
+          const startX = this.getZonePosition(zoneIndex);
           spacejelly.style.left = startX + 'px';
+          
+          // Mark zone as occupied and store reference
+          this.spawnZones[zoneIndex].occupied = true;
+          this.spawnZones[zoneIndex].lastSpawnTime = Date.now();
+          spacejelly._zoneIndex = zoneIndex;
           
           // Random animation delay
           const animationDelay = delay + Math.random() * 4000;
@@ -528,6 +576,12 @@
       }
       
       releaseParticle(particle) {
+          // Free the zone
+          if (particle._zoneIndex !== undefined) {
+              this.spawnZones[particle._zoneIndex].occupied = false;
+              particle._zoneIndex = undefined;
+          }
+          
           // Remove from DOM
           if (particle.parentNode) {
               particle.parentNode.removeChild(particle);
