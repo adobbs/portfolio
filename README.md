@@ -5,7 +5,7 @@ A futuristic personal portfolio website featuring a sci-fi aesthetic with animat
 ## ✨ Features
 
 - **Sci-Fi Design**: Dark theme with retro-futuristic Audiowide typography
-- **Space Theme**: Starfield with spacecraft launching from planetary surface
+- **Space Theme**: Starfield with spacejelly creatures launching from planetary surface
 - **Corner Cuts**: BSG-style diagonal cuts on all interactive elements
 - **Responsive**: Mobile-optimized with performance considerations
 - **Zero Dependencies**: Pure HTML, CSS, and JavaScript
@@ -16,7 +16,7 @@ A futuristic personal portfolio website featuring a sci-fi aesthetic with animat
 - **Corner cuts** using CSS `clip-path` on cards, links, and buttons
 - **Gradient background** transitioning from black to dark green
 - **Starfield** with 200 static stars in upper 2/3 of viewport
-- **Animated spacecraft** launching from planetary surface with engine trails
+- **Animated spacejelly** - jellyfish-like creatures with brand green coloring launching from planetary surface
 - **Semi-transparent backgrounds** for depth and layering
 
 ### Typography
@@ -69,16 +69,16 @@ Key CSS variables and values:
 - Animation density: Controlled in JavaScript `ThinkingAnimation` class
 
 ### Animation Controls
-The spacecraft animation can be customized via the JavaScript class:
-- `density`: Number of spacecraft (default: 4)
+The spacejelly animation can be customized via the JavaScript class:
+- `density`: Number of spacejelly creatures (default: 4)
 - `speed`: Animation speed multiplier
-- `intensity`: Spacecraft spawn frequency
+- `intensity`: Spacejelly spawn frequency
 - Object pooling system for performance optimization
 
 ## 📱 Mobile Experience
 
 - Hover effects disabled on touch devices
-- Starfield and spacecraft animations hidden for performance
+- Starfield and spacejelly animations hidden for performance
 - Single-column layout with optimized spacing
 - Maintains visual hierarchy and accessibility
 
@@ -86,7 +86,7 @@ The spacecraft animation can be customized via the JavaScript class:
 
 - Lightweight: No external frameworks or libraries
 - Optimized animations with `requestAnimationFrame`
-- Object pooling system for spacecraft with efficient cleanup
+- Object pooling system for spacejelly creatures with efficient cleanup
 - Static starfield for minimal performance impact
 - Mobile-optimized with reduced visual effects
 

@@ -297,62 +297,50 @@
         }
 
 
-        /* Animated Spacecraft */
-        .spacecraft {
+        /* Animated Spacejelly */
+        .spacejelly {
             position: absolute;
-            width: 4px;
-            height: 14px;
-            background: linear-gradient(to top, rgba(13, 122, 95, 0.9) 0%, rgba(200, 255, 220, 0.8) 40%, rgba(192, 192, 192, 0.9) 100%);
-            border-radius: 8px 8px 2px 2px;
-            animation: float 6s ease-in-out;
+            width: 10px;
+            height: 16px;
+            background: linear-gradient(to top, rgba(13, 122, 95, 0.9) 0%, rgba(13, 122, 95, 0.7) 40%, rgba(26, 158, 128, 0.8) 70%, rgba(52, 186, 155, 0.6) 100%);
+            border-radius: 50% 50% 20% 20%;
+            animation: spacejelly-flight 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             /* Prevent initial flash at top by starting with animation's 0% state */
             transform: translateY(105vh) translateX(0) scale(0.5);
             opacity: 0;
-            box-shadow: 0 0 4px rgba(13, 122, 95, 0.6), 0 -2px 8px rgba(13, 122, 95, 0.4);
+            box-shadow: 0 0 8px rgba(13, 122, 95, 0.5), 0 0 16px rgba(200, 255, 220, 0.3);
         }
         
-        .spacecraft::before {
+        .spacejelly::before {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -6px;
             left: 50%;
             transform: translateX(-50%);
-            width: 2px;
-            height: 6px;
-            background: rgba(13, 122, 95, 0.8);
-            border-radius: 1px;
-            box-shadow: 0 0 6px rgba(13, 122, 95, 0.6);
+            width: 6px;
+            height: 10px;
+            background: linear-gradient(to bottom, rgba(13, 122, 95, 0.6) 0%, rgba(200, 255, 220, 0.4) 50%, transparent 100%);
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0 0 8px rgba(13, 122, 95, 0.4);
         }
 
 
-        /* Spacecraft flight animation */
-        @keyframes float {
+        /* Spacejelly flight animation */
+        @keyframes spacejelly-flight {
             0% {
-                transform: translateY(105vh) translateX(0) scale(0.3) rotate(0deg);
+                transform: translateY(105vh) translateX(0) scale(0.5);
                 opacity: 0;
             }
-            15% {
-                opacity: 0.8;
-                transform: translateY(85vh) translateX(20px) scale(0.8) rotate(2deg);
-            }
-            35% {
+            20% {
+                transform: translateY(75vh) translateX(0) scale(1);
                 opacity: 1;
-                transform: translateY(65vh) translateX(-10px) scale(1) rotate(-1deg);
             }
-            55% {
+            80% {
+                transform: translateY(15vh) translateX(0) scale(1);
                 opacity: 1;
-                transform: translateY(45vh) translateX(30px) scale(1.1) rotate(3deg);
-            }
-            75% {
-                opacity: 0.9;
-                transform: translateY(25vh) translateX(-5px) scale(0.9) rotate(-2deg);
-            }
-            90% {
-                opacity: 0.3;
-                transform: translateY(10vh) translateX(15px) scale(0.6) rotate(1deg);
             }
             100% {
-                transform: translateY(-15vh) translateX(0) scale(0.2) rotate(0deg);
+                transform: translateY(-10vh) translateX(0) scale(0.5);
                 opacity: 0;
             }
         }
@@ -424,10 +412,10 @@
       createPool() {
           // Pre-create DOM elements for reuse
           for (let i = 0; i < this.size; i++) {
-              const spacecraft = document.createElement('div');
-              spacecraft.className = 'spacecraft';
-              spacecraft.style.display = 'none'; // Hidden by default
-              this.pool.push(spacecraft);
+              const spacejelly = document.createElement('div');
+              spacejelly.className = 'spacejelly';
+              spacejelly.style.display = 'none'; // Hidden by default
+              this.pool.push(spacejelly);
           }
       }
       
@@ -440,16 +428,16 @@
           }
           
           // Fallback: create new if pool is empty
-          const spacecraft = document.createElement('div');
-          spacecraft.className = 'spacecraft';
-          this.activeParticles.add(spacecraft);
+          const spacejelly = document.createElement('div');
+          spacejelly.className = 'spacejelly';
+          this.activeParticles.add(spacejelly);
           
           // Track fallback creation
           if (window.perfMonitor) {
               window.perfMonitor.trackDOMCreation();
           }
           
-          return spacecraft;
+          return spacejelly;
       }
       
       release(particle) {
@@ -509,7 +497,7 @@
           const particleCount = this.density;
           
           for (let i = 0; i < particleCount; i++) {
-              this.createParticle('spacecraft', i * 100);
+              this.createParticle('spacejelly', i * 100);
           }
 
 
@@ -518,25 +506,25 @@
       }
 
       createParticle(className, delay) {
-          const spacecraft = this.particlePool.acquire();
-          spacecraft.className = className;
+          const spacejelly = this.particlePool.acquire();
+          spacejelly.className = className;
           
           // Random starting position
           const startX = Math.random() * window.innerWidth;
-          spacecraft.style.left = startX + 'px';
+          spacejelly.style.left = startX + 'px';
           
           // Random animation delay
           const animationDelay = delay + Math.random() * 4000;
           const animationDuration = 6000 / this.speed;
-          spacecraft.style.animationDelay = animationDelay + 'ms';
-          spacecraft.style.animationDuration = animationDuration + 'ms';
+          spacejelly.style.animationDelay = animationDelay + 'ms';
+          spacejelly.style.animationDuration = animationDuration + 'ms';
           
           // Store creation time and duration for cleanup
-          spacecraft._createdAt = Date.now();
-          spacecraft._totalDuration = animationDelay + animationDuration;
+          spacejelly._createdAt = Date.now();
+          spacejelly._totalDuration = animationDelay + animationDuration;
           
-          this.container.appendChild(spacecraft);
-          this.particles.push(spacecraft);
+          this.container.appendChild(spacejelly);
+          this.particles.push(spacejelly);
       }
       
       releaseParticle(particle) {
@@ -595,10 +583,10 @@
 
       animate() {
           if (this.isActive) {
-              // Continuously create new spacecraft with proper spacing
-              if (Math.random() < 0.01) {  // Even lower frequency for fewer spacecraft
+              // Continuously create new spacejelly with proper spacing
+              if (Math.random() < 0.01) {  // Even lower frequency for fewer spacejelly
                   const randomDelay = Math.random() * 4000;  // Random delay up to 4 seconds
-                  this.createParticle('spacecraft', randomDelay);
+                  this.createParticle('spacejelly', randomDelay);
               }
               
               // Clean up old particles

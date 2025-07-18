@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static personal portfolio website for Andy Dobbs, a Design Engineer. The site features a sci-fi space aesthetic with dark theme, starfield background, animated spacecraft, and Battlestar Galactica-inspired corner cuts. It's a single-page HTML file with embedded CSS and JavaScript.
+This is a static personal portfolio website for Andy Dobbs, a Design Engineer. The site features a sci-fi space aesthetic with dark theme, starfield background, animated spacejelly creatures, and Battlestar Galactica-inspired corner cuts. It's a single-page HTML file with embedded CSS and JavaScript.
 
 ## Architecture
 
@@ -44,14 +44,14 @@ npx serve .
   - Social links: 16px cuts (top-left, bottom-right)  
   - Project buttons: 12px cuts (top-left, bottom-right)
 - **Starfield**: 200 static stars scattered across upper 2/3 of viewport for space atmosphere
-- **Animated spacecraft**: Rocket-shaped vessels launching from planetary surface with engine trails
+- **Animated spacejelly**: Jellyfish-like creatures with wider, rounded dome shape and brand green gradient coloring launching from planetary surface
 - **Gradient overlay**: Semi-transparent teal gradient from bottom simulating planetary atmosphere
 - **No borders**: Clean, borderless design relies on backgrounds and corner cuts
 
 ### Layout Structure
-- **Z-index layers**: Spacecraft animation (1), starfield (2), gradient (8), main content (10)
+- **Z-index layers**: Spacejelly animation (1), starfield (2), gradient (8), main content (10)
 - **Grid system**: 3-column project grid on desktop, single column on mobile
-- **Responsive behavior**: Starfield and spacecraft animations hidden on mobile for performance
+- **Responsive behavior**: Starfield and spacejelly animations hidden on mobile for performance
 
 ### Interactive Elements
 - **Hover effects**: Subtle transforms, color shifts, and box shadows
@@ -60,7 +60,7 @@ npx serve .
 
 ## Key Components
 
-- **Background Animation**: JavaScript-driven spacecraft system with object pooling and performance optimization
+- **Background Animation**: JavaScript-driven spacejelly system with object pooling and performance optimization
 - **Static Starfield**: 200 strategically placed stars for space atmosphere
 - **Project Cards**: Semi-transparent cards with corner cuts showcasing work
 - **Social Links**: GitHub and LinkedIn with matching aesthetic
