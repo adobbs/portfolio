@@ -47,7 +47,7 @@
 
         .header {
             text-align: center;
-            margin-bottom: 5rem;
+            margin-bottom: 3rem;
         }
 
         h1 {
@@ -122,6 +122,18 @@
             box-shadow: 0 4px 12px rgba(13, 122, 95, 0.15);
         }
 
+        .project-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.02);
+        }
 
         .project-header {
             font-family: 'Poppins', sans-serif;
@@ -350,6 +362,7 @@
 
         <div class="projects">
             <div class="project-card">
+                <img src="analytics-landscape.png" alt="Analytics Dashboard Preview" class="project-image">
                 <div class="project-header">Analytics & Reporting Design</div>
                 <div class="project-description">Led creation of new feature team. Designed data visualizations, gamification UI, and reports that leveled up operations at health systems.</div>
                 <a href="https://www.figma.com/board/20iz9gieqNfdauU6FoOUFs/Analytics-Dashboard-Case-Study?node-id=0-1&t=xdYj2b0rDAXR1hhJ-1" class="project-button" target="_blank">
@@ -357,6 +370,7 @@
                 </a>
             </div>
             <div class="project-card">
+              <img src="aiplatform-landscape.png" alt="AI Platform Feature Design Preview" class="project-image">
               <div class="project-header">AI Platform Feature Design</div>
               <div class="project-description">Created design strategy and high fidelity prototypes for AI chatbot across iOS, Android, and Web. Plus design of content management system for admins.</div>
               <a href="https://www.figma.com/board/KcLScZkSCkPNudLCmIUp2H/AI-Design-Case-Study?node-id=0-1&t=kdVX5tfqIpH5QM6u-1" class="project-button" target="_blank">
@@ -371,6 +385,7 @@
               </a>
             </div> -->
             <div class="project-card">
+              <img src="website-landscape.png" alt="Website Design & Development Preview" class="project-image">
               <div class="project-header">Website Design & Dev</div>
               <div class="project-description">Solo design and development project. Built with Next.js, React, and TypeScript. Features responsive design, accessibility, and seamless patient experience.</div>
               <a href="https://www.polarisfamilymed.com" class="project-button" target="_blank">
