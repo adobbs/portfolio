@@ -795,10 +795,13 @@
         const projectName = projectCard.querySelector('.project-header').textContent;
         const buttonText = button.textContent.trim();
 
-        window.va('track', 'project_click', {
-          project: projectName,
-          button_type: buttonText,
-          position: index + 1
+        window.va('event', {
+          name: 'project_click',
+          data: {
+            project: projectName,
+            button_type: buttonText,
+            position: index + 1
+          }
         });
       });
     });
@@ -810,9 +813,12 @@
         const linkText = link.textContent.trim();
         const platform = linkText.toLowerCase();
 
-        window.va('track', 'social_visit', {
-          platform: platform,
-          destination: link.href
+        window.va('event', {
+          name: 'social_visit',
+          data: {
+            platform: platform,
+            destination: link.href
+          }
         });
       });
     });
