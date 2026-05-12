@@ -29,7 +29,7 @@
             color: #e8e8e8;
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
-            min-height: 100vh;
+            min-height: 100svh;
         }
 
 
@@ -39,7 +39,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
-            min-height: 100vh;
+            min-height: 100svh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -66,120 +66,6 @@
             margin: 0 auto;
         }
 
-
-        .links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: rgba(26, 26, 26, 0.85);
-            text-decoration: none;
-            color: #e4e4e7;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            clip-path: polygon(16px 0%, 100% 0%, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0% 100%, 0% 16px);
-        }
-
-        .link:hover {
-            background: #111312;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(13, 122, 95, 0.15);
-        }
-
-
-        .link svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 0 0 3rem 0;
-            max-width: 100%;
-        }
-
-        .project-card {
-            background: rgba(26, 26, 26, 0.85);
-            padding: 1.5rem;
-            transition: all 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            clip-path: polygon(20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%, 0% 20px);
-        }
-
-        .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(13, 122, 95, 0.15);
-        }
-
-        .project-image {
-            width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-        }
-
-        .project-card:hover .project-image {
-            transform: scale(1.02);
-        }
-
-        .project-header {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: #f8f9fa;
-            margin-bottom: 0.75rem;
-        }
-
-
-        .project-description {
-            font-size: 0.95rem;
-            color: #b8b8b8;
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
-        }
-
-        .project-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1.25rem;
-            background: #0d7a5f;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-            margin-top: auto;
-            width: 100%;
-            clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
-        }
-
-        .project-button:hover {
-            background: #0a5948;
-            transform: translateY(-1px);
-        }
-
-
-        .project-button svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
-
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
@@ -197,38 +83,6 @@
               font-size: 1.125rem;
             }
             
-            .title {
-                font-size: 1.2rem;
-            }
-            
-            .projects {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                margin: 2rem 0;
-            }
-
-            .project-header {
-              font-size: 1.1rem;
-            }
-
-            .project-description {
-              font-size: .8rem;
-            }
-
-            .project-button {
-              font-size: .8rem;
-            }
-            
-            .links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .link {
-                width: 250px;
-                justify-content: center;
-            }
-            
             /* Hide background animation on mobile */
             /* .animation-container {
                 display: none;
@@ -243,23 +97,6 @@
             /* .star-field {
                 display: none;
             } */
-            
-            /* Remove hover effects on mobile */
-            .link:hover {
-                background: #1a1a1a;
-                transform: none;
-                box-shadow: none;
-            }
-            
-            .project-card:hover {
-                transform: none;
-                box-shadow: none;
-            }
-            
-            .project-button:hover {
-                background: #0f766e;
-                transform: none;
-            }
         }
         
 
@@ -741,51 +578,5 @@
   window.addEventListener('resize', () => {
       thinkingAnim.createParticles();
   });
-
-  // Custom Event Tracking
-  function initializeEventTracking() {
-    // Track project button clicks
-    const projectButtons = document.querySelectorAll('.project-button');
-    projectButtons.forEach((button, index) => {
-      button.addEventListener('click', () => {
-        const projectCard = button.closest('.project-card');
-        const projectName = projectCard.querySelector('.project-header').textContent;
-        const buttonText = button.textContent.trim();
-
-        window.va('event', {
-          name: 'project_click',
-          data: {
-            project: projectName,
-            button_type: buttonText,
-            position: index + 1
-          }
-        });
-      });
-    });
-
-    // Track social link clicks
-    const socialLinks = document.querySelectorAll('.links .link');
-    socialLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        const linkText = link.textContent.trim();
-        const platform = linkText.toLowerCase();
-
-        window.va('event', {
-          name: 'social_visit',
-          data: {
-            platform: platform,
-            destination: link.href
-          }
-        });
-      });
-    });
-  }
-
-  // Initialize event tracking when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeEventTracking);
-  } else {
-    initializeEventTracking();
-  }
 </script>
 </html>
